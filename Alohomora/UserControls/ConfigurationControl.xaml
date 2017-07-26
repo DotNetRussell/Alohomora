@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="Alohomora.UserControls.ConfigurationControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Alohomora.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Margin="100" HorizontalAlignment="Left">
+
+        <StackPanel Orientation="Vertical">
+            
+            <TextBlock Text="Configuration" FontSize="30" FontWeight="Bold"/>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Width="200" FontSize="20" Margin="10,0,10,0" Text="Pipl API Key:" />
+                <TextBox Width="500" FontSize="20" Margin="10,0,10,0" Text="{Binding PiplApiKey}" />
+            </StackPanel>
+            <TextBlock HorizontalAlignment="Left" Margin="50,0,0,30" Width="500" TextWrapping="Wrap" FontSize="15">The Pipl API Key is used when making all calls to the Pipl API. It's required that you retrieve a key before using this feature. Keys can be generated for free here <Hyperlink RequestNavigate="NavigateToPiplApiDemoLink" NavigateUri="https://pipl.com/api/demo"> https://pipl.com/api/demo </Hyperlink>. It's recommended that you use a VPN or some other IP masking service. The keys are IP bound and refresh daily.</TextBlock>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Width="200" FontSize="20" Margin="10,0,10,0" Text="Connection String:" />
+                <TextBox Width="500" FontSize="20" Margin="10,0,10,0" Text="{Binding ConnectionString}" />
+            </StackPanel>
+            <TextBlock HorizontalAlignment="Left" Margin="50,0,0,30" Width="500" TextWrapping="Wrap" FontSize="15">This is the connection string for the database hosting your voter information table. The voter table must be a standard SWVF format. See tutorials under welcome for more info on where you can find the Ohio voter DB.</TextBlock>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Width="200" FontSize="20" Margin="10,0,10,0" Text="Database State:" />
+                <TextBox Width="500" FontSize="20" Margin="10,0,10,0" Text="{Binding DatabaseState}" />
+            </StackPanel>
+            <TextBlock HorizontalAlignment="Left" Margin="50,0,0,30" Width="500" TextWrapping="Wrap" FontSize="15">The state you'd like to configure the application for. NOTE: in the near future this won't matter.</TextBlock>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Width="200" FontSize="20" Margin="10,0,10,0" Text="Database Table Name:" />
+                <TextBox Width="500" FontSize="20" Margin="10,0,10,0" Text="{Binding DatabaseTableName}" />
+            </StackPanel>
+            <TextBlock HorizontalAlignment="Left" Margin="50,0,0,30" Width="500" TextWrapping="Wrap" FontSize="15">The name of the table hosting your voter information.</TextBlock>
+            <Button Command="{Binding SaveConfigurationCommand}" Margin="0,10,0,0" HorizontalAlignment="Right" Width="200" FontSize="20">Save</Button>
+        </StackPanel>
+    </Grid>
+</UserControl>
