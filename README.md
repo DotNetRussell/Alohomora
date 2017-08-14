@@ -19,7 +19,7 @@
 <li>Display target's co-workers scraped from facebook</li>
 <li>Display target's apps scraped from facebook</li>
 <li>Display target's checkins scraped from facebook</li>
-<li>Explort targets to CSV</li>
+<li>Export targets to CSV</li>
 <li>Add a map view and street view of target's home address</li>
 <li>Incorperate some data breach data. Possibly from yahoo and/or ashely madison?</li>
 <li>Cache all target data in a centeral location for display and use</li>
