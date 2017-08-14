@@ -10,9 +10,6 @@
 </br>
 </br>
 <img src="https://vignette2.wikia.nocookie.net/harrypotter/images/3/3e/Unlocking_charm1.gif/revision/latest?cb=20140811055322" width="500O"/>
-<p style="font-size:39">Welcome to Alohomora</p>
-<p style="font-size:39"><b>Here you will find tutorials on how to use this tool.</b></p>
-</center>
 
 <h2> Road Map for DerbyCon release</h2>
 <ul>
@@ -28,6 +25,9 @@
 <li>Cache all target data in a centeral location for display and use</li>
 <li>Add wait dialog for spouse search voter database screen</li>
 </ul>
+<hr/>
+<p style="font-size:39"><b>Here you will find tutorials on how to use this tool.</b></p>
+</center>
 
 <p style="font-size:30;">
 
