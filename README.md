@@ -14,6 +14,20 @@
 <p style="font-size:39"><b>Here you will find tutorials on how to use this tool.</b></p>
 </center>
 
+<h2> Road Map for DerbyCon release</h2>
+<ul>
+<li>Regex customization and config section for easy on the fly updates</li>
+<li>Link voter db results to pipl search</li>
+<li>Clean up project files</li>
+<li>Display target's co-workers scraped from facebook</li>
+<li>Display target's apps scraped from facebook</li>
+<li>Display target's checkins scraped from facebook</li>
+<li>Explort targets to CSV</li>
+<li>Add a map view and street view of target's home address</li>
+<li>Incorperate some data breach data. Possibly from yahoo and/or ashely madison?</li>
+<li>Cache all target data in a centeral location for display and use</li>
+<li>Add wait dialog for spouse search voter database screen</li>
+</ul>
 
 <p style="font-size:30;">
 
