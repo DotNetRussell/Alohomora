@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Anthony\Desktop\Alohomora\Alohomora\obj\Debug\
+D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\
 Alohomora
 none
 false
 DEBUG;TRACE
-C:\Users\Anthony\Desktop\Alohomora\Alohomora\App.xaml
-61322571530
+D:\Alohomora Git\Alohomora\Alohomora\App.xaml
+7-1977376272
 
-481826217840
-21-614996430
-MainWindow.xaml;UserControls\ConfigurationControl.xaml;UserControls\FacebookLogin.xaml;UserControls\BrowserControl.xaml;UserControls\SearchFacebookControl.xaml;UserControls\SearchVoterDBControl.xaml;
+501426944915
+20-1166649980
+MainWindow.xaml;UserControls\ConfigurationControl.xaml;UserControls\FacebookLogin.xaml;UserControls\BrowserControl.xaml;UserControls\RegexTweeker.xaml;UserControls\SearchFacebookControl.xaml;UserControls\SearchVoterDBControl.xaml;
 
-True
+False
 

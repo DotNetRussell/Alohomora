@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("models/piplmodels/testdata.txt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/configure.png")]
 
 

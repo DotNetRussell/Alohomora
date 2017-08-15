@@ -81,9 +81,18 @@ namespace Alohomora.ViewModels
             ScrapeFacebookCommand = new ButtonCommand(CanExecuteFacebookScrapeCommand, FacebookScrapeExecuted);
             SearchPiplAPICommand = new ButtonCommand(CanExecutePiplApiSearch, PiplApiSearchExecuted);
             ModifiedVoterDBSearchCommand = new ButtonCommand(CanExecuteModifiedSearchVoterDBCommand, ExecutedModifiedSearchVoterDBCommand);
+            LoadCustomConfiguration();
         }
 
         #endregion
+
+        private void LoadCustomConfiguration()
+        {
+            if (!FacebookRegexConfiguration.LoadCustomRegexes())
+            {
+                FacebookRegexConfiguration.LoadDefaults();
+            }
+        }
 
         #region Command Handlers
 

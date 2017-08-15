@@ -37,6 +37,7 @@ namespace Alohomora
         private FacebookLogin _facebookLogin = new FacebookLogin();
         private SearchVoterDBControl _searchVoterDBControl = new SearchVoterDBControl();
         private SearchFacebookControl _searchFacebookControl = new SearchFacebookControl();
+        private RegexTweeker _regexTweeker = new RegexTweeker();
         private ConfigurationControl _configurationControl = new ConfigurationControl();
 
         public MainWindow()
@@ -73,6 +74,9 @@ namespace Alohomora
                     mainContentControl.Content = _searchFacebookControl;
                     break;
                 case 4:
+                    mainContentControl.Content = _regexTweeker;
+                    break;
+                case 5:
                     mainContentControl.Content = _configurationControl;
                     break;
                 default:

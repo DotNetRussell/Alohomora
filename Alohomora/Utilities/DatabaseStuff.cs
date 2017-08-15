@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Alohomora.Utilities
 {
@@ -180,7 +181,10 @@ namespace Alohomora.Utilities
                 _connection.Close();
                 Console.WriteLine("ROWS: " + count);
             }
-            catch (Exception ex) { /**nom nom nom  **/ }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message); /**nom nom nom  **/
+            }
 
             return targets;
         }
@@ -246,7 +250,10 @@ namespace Alohomora.Utilities
                 _connection.Close();
                 Console.WriteLine("ROWS: " + count);
             }
-            catch (Exception ex) { /**nom nom nom  **/ }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message); /**nom nom nom  **/
+            }
 
             return targets;
         }

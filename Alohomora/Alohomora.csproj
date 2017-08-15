@@ -96,6 +96,9 @@
     <Compile Include="UserControls\BrowserControl.xaml.cs">
       <DependentUpon>BrowserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\RegexTweeker.xaml.cs">
+      <DependentUpon>RegexTweeker.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\SearchFacebookControl.xaml.cs">
       <DependentUpon>SearchFacebookControl.xaml</DependentUpon>
     </Compile>
@@ -106,14 +109,15 @@
     <Compile Include="Utilities\ButtonCommand.cs" />
     <Compile Include="Utilities\DatabaseStuff.cs" />
     <Compile Include="Utilities\ExternalBrowser.cs" />
+    <Compile Include="Utilities\FacebookRegexConfiguration.cs" />
     <Compile Include="Utilities\FacebookStuff.cs" />
     <Compile Include="Utilities\PiplStuff.cs" />
     <Compile Include="Utilities\RelationshipStuff.cs" />
     <Compile Include="Utilities\Reporting.cs" />
-    <Compile Include="Utilities\TorStuff.cs" />
     <Compile Include="Utilities\WebProxyStuff.cs" />
     <Compile Include="ViewModels\ConfigurationViewModel.cs" />
     <Compile Include="ViewModels\MasterViewModel.cs" />
+    <Compile Include="ViewModels\RegexTweekerViewModel.cs" />
     <Compile Include="ViewModels\SearchFacebookViewModel.cs" />
     <Compile Include="ViewModels\SearchVoterDatabaseViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
@@ -138,6 +142,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControls\BrowserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\RegexTweeker.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -187,12 +195,6 @@
     <Resource Include="Images\american-flag.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Settings-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\fbd.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\pip.png" />
   </ItemGroup>
   <ItemGroup>
@@ -202,13 +204,16 @@
     <Resource Include="Images\american-flag-disabled.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\fbd.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Images\fbl.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\TorSharp-master\src\Knapcode.TorSharp\Knapcode.TorSharp.csproj">
-      <Project>{66155ef6-c1b3-4f9c-bef5-d04959463a9d}</Project>
-      <Name>Knapcode.TorSharp</Name>
-    </ProjectReference>
+    <Resource Include="Images\settings-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\configure.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

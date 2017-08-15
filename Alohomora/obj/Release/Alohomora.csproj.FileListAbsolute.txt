@@ -29,3 +29,32 @@ C:\Users\Anthony\Desktop\Alohomora\Alohomora\obj\Release\Alohomora.Properties.Re
 C:\Users\Anthony\Desktop\Alohomora\Alohomora\obj\Release\Alohomora.csproj.GenerateResource.Cache
 C:\Users\Anthony\Desktop\Alohomora\Alohomora\obj\Release\Alohomora.exe
 C:\Users\Anthony\Desktop\Alohomora\Alohomora\obj\Release\Alohomora.pdb
+D:\Alohomora Git\Alohomora\Alohomora\bin\Release\SimpleBrowser.exe
+D:\Alohomora Git\Alohomora\Alohomora\bin\Release\Alohomora.exe.config
+D:\Alohomora Git\Alohomora\Alohomora\bin\Release\Alohomora.exe
+D:\Alohomora Git\Alohomora\Alohomora\bin\Release\Alohomora.pdb
+D:\Alohomora Git\Alohomora\Alohomora\bin\Release\Newtonsoft.Json.dll
+D:\Alohomora Git\Alohomora\Alohomora\bin\Release\WebDriver.dll
+D:\Alohomora Git\Alohomora\Alohomora\bin\Release\Newtonsoft.Json.xml
+D:\Alohomora Git\Alohomora\Alohomora\bin\Release\WebDriver.xml
+D:\Alohomora Git\Alohomora\Alohomora\obj\Release\Alohomora.csprojResolveAssemblyReference.cache
+D:\Alohomora Git\Alohomora\Alohomora\obj\Release\MainWindow.g.cs
+D:\Alohomora Git\Alohomora\Alohomora\obj\Release\UserControls\ConfigurationControl.g.cs
+D:\Alohomora Git\Alohomora\Alohomora\obj\Release\UserControls\FacebookLogin.g.cs
+D:\Alohomora Git\Alohomora\Alohomora\obj\Release\UserControls\BrowserControl.g.cs
+D:\Alohomora Git\Alohomora\Alohomora\obj\Release\UserControls\SearchFacebookControl.g.cs
+D:\Alohomora Git\Alohomora\Alohomora\obj\Release\UserControls\SearchVoterDBControl.g.cs
+D:\Alohomora Git\Alohomora\Alohomora\obj\Release\App.g.cs
+D:\Alohomora Git\Alohomora\Alohomora\obj\Release\Alohomora_MarkupCompile.cache
+D:\Alohomora Git\Alohomora\Alohomora\obj\Release\Alohomora_MarkupCompile.lref
+D:\Alohomora Git\Alohomora\Alohomora\obj\Release\MainWindow.baml
+D:\Alohomora Git\Alohomora\Alohomora\obj\Release\UserControls\ConfigurationControl.baml
+D:\Alohomora Git\Alohomora\Alohomora\obj\Release\UserControls\FacebookLogin.baml
+D:\Alohomora Git\Alohomora\Alohomora\obj\Release\UserControls\BrowserControl.baml
+D:\Alohomora Git\Alohomora\Alohomora\obj\Release\UserControls\SearchFacebookControl.baml
+D:\Alohomora Git\Alohomora\Alohomora\obj\Release\UserControls\SearchVoterDBControl.baml
+D:\Alohomora Git\Alohomora\Alohomora\obj\Release\Alohomora.g.resources
+D:\Alohomora Git\Alohomora\Alohomora\obj\Release\Alohomora.Properties.Resources.resources
+D:\Alohomora Git\Alohomora\Alohomora\obj\Release\Alohomora.csproj.GenerateResource.Cache
+D:\Alohomora Git\Alohomora\Alohomora\obj\Release\Alohomora.exe
+D:\Alohomora Git\Alohomora\Alohomora\obj\Release\Alohomora.pdb

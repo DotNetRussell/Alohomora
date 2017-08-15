@@ -15,7 +15,7 @@
         <Border 
             Grid.Column="0"  
             BorderBrush="Black"            
-            Background="Gray">
+            Background="White">
             <ListView 
             Padding="10" 
             BorderThickness="0"
@@ -24,13 +24,14 @@
             x:Name="SearchListbox" HorizontalContentAlignment="Left"
             SelectionMode="Single" VerticalAlignment="Top"  >
 
-                <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Center">
+                <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Center" ToolTip="Welcome Page">
                     <TextBlock TextWrapping="Wrap" HorizontalAlignment="Stretch" FontSize="30" FontWeight="Bold" Background="white" Padding="10" >Welcome</TextBlock>
                 </Border>
-                <Image Source="/Images/fbl.png" Height="90" />
-                <Image Source="/Images/american-flag.png" Height="80"/>
-                <Image Source="/Images/fbd.png"  Height="100"/>
-                <Image Source="/Images/Settings-icon.png" Height="100"/>
+                <Image Source="/Images/fbl.png" Height="75" ToolTip="Log into Facebook" />
+                <Image Source="/Images/american-flag.png" Height="80" ToolTip="Search Voter DataBase"/>
+                <Image Source="/Images/fbd.png"  Height="90" ToolTip="Search Facebook"/>
+                <Image Source="/Images/configure.png" Height="90" ToolTip="Tweek Regexes" />
+                <Image Source="/Images/Settings-icon.png" Height="90" ToolTip="Configure Alohomora"/>
                 <ListView.ItemContainerStyle>
                     <Style TargetType="{x:Type ListViewItem}">
                         <Setter Property="Background" Value="Transparent" />

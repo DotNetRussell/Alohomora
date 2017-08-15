@@ -71,3 +71,34 @@ C:\Users\Anthony\Desktop\Alohomora\Alohomora\bin\Debug\Knapcode.TorSharp.dll
 C:\Users\Anthony\Desktop\Alohomora\Alohomora\bin\Debug\WebDriver.dll
 C:\Users\Anthony\Desktop\Alohomora\Alohomora\bin\Debug\WebDriver.xml
 C:\Users\Anthony\Desktop\Alohomora\Alohomora\bin\Debug\Knapcode.TorSharp.pdb
+D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\Alohomora.csprojResolveAssemblyReference.cache
+D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\MainWindow.g.cs
+D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\UserControls\ConfigurationControl.g.cs
+D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\UserControls\FacebookLogin.g.cs
+D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\UserControls\BrowserControl.g.cs
+D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\UserControls\SearchFacebookControl.g.cs
+D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\UserControls\SearchVoterDBControl.g.cs
+D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\App.g.cs
+D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\Alohomora_MarkupCompile.cache
+D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\Alohomora_MarkupCompile.lref
+D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\Alohomora.exe
+D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\Alohomora.pdb
+D:\Alohomora Git\Alohomora\Alohomora\bin\Debug\SimpleBrowser.exe
+D:\Alohomora Git\Alohomora\Alohomora\bin\Debug\Alohomora.exe.config
+D:\Alohomora Git\Alohomora\Alohomora\bin\Debug\Alohomora.exe
+D:\Alohomora Git\Alohomora\Alohomora\bin\Debug\Alohomora.pdb
+D:\Alohomora Git\Alohomora\Alohomora\bin\Debug\Newtonsoft.Json.dll
+D:\Alohomora Git\Alohomora\Alohomora\bin\Debug\WebDriver.dll
+D:\Alohomora Git\Alohomora\Alohomora\bin\Debug\Newtonsoft.Json.xml
+D:\Alohomora Git\Alohomora\Alohomora\bin\Debug\WebDriver.xml
+D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\MainWindow.baml
+D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\UserControls\ConfigurationControl.baml
+D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\UserControls\FacebookLogin.baml
+D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\UserControls\BrowserControl.baml
+D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\UserControls\SearchFacebookControl.baml
+D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\UserControls\SearchVoterDBControl.baml
+D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\Alohomora.g.resources
+D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\Alohomora.Properties.Resources.resources
+D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\Alohomora.csproj.GenerateResource.Cache
+D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\UserControls\RegexTweeker.g.cs
+D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\UserControls\RegexTweeker.baml
