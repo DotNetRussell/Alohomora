@@ -13,7 +13,7 @@
 
 <h2> Road Map for DerbyCon release</h2>
 <ul>
-<li>Regex customization and config section for easy on the fly updates</li>
+<li>✔ COMPLETED ✔ - Regex customization and config section for easy on the fly updates</li>
 <li>Link voter db results to pipl search</li>
 <li>Clean up project files</li>
 <li>Display target's co-workers scraped from facebook</li>
