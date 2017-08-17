@@ -87,23 +87,24 @@
     <Compile Include="Models\piplModels\Url.cs" />
     <Compile Include="Models\ReverseQueryModel.cs" />
     <Compile Include="Models\UsernameLinkModel.cs" />
-    <Compile Include="UserControls\ConfigurationControl.xaml.cs">
+    <Compile Include="Modules\Configuration\ConfigurationControl.xaml.cs">
       <DependentUpon>ConfigurationControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\FacebookLogin.xaml.cs">
+    <Compile Include="Modules\FacebookLogin\FacebookLogin.xaml.cs">
       <DependentUpon>FacebookLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\FacebookSearch\SearchFacebookControl.xaml.cs">
+      <DependentUpon>SearchFacebookControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\RegexTweeker\RegexTweeker.xaml.cs">
+      <DependentUpon>RegexTweeker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\ModuleEntryPoint.cs" />
+    <Compile Include="Modules\VoterDatabase\SearchVoterDBControl.xaml.cs">
+      <DependentUpon>SearchVoterDBControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\BrowserControl.xaml.cs">
       <DependentUpon>BrowserControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\RegexTweeker.xaml.cs">
-      <DependentUpon>RegexTweeker.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\SearchFacebookControl.xaml.cs">
-      <DependentUpon>SearchFacebookControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\SearchVoterDBControl.xaml.cs">
-      <DependentUpon>SearchVoterDBControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utilities\ApplicationConfiguration.cs" />
     <Compile Include="Utilities\ButtonCommand.cs" />
@@ -133,27 +134,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="UserControls\ConfigurationControl.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Modules\Configuration\ConfigurationControl.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
-    <Page Include="UserControls\FacebookLogin.xaml">
+    <Page Include="Modules\FacebookLogin\FacebookLogin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Modules\FacebookSearch\SearchFacebookControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Modules\RegexTweeker\RegexTweeker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Modules\VoterDatabase\SearchVoterDBControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControls\BrowserControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControls\RegexTweeker.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControls\SearchFacebookControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControls\SearchVoterDBControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -207,13 +208,34 @@
     <Resource Include="Images\fbd.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\fbl.png" />
+    <EmbeddedResource Include="Modules\FacebookSearch\Images\module_icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\settings-icon.png" />
+    <EmbeddedResource Include="Modules\VoterDatabase\Images\module_icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\configure.png" />
+    <EmbeddedResource Include="Modules\RegexTweeker\Images\module_icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Modules\FacebookLogin\Images\module_icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Modules\Configuration\Images\module_icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\home_icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

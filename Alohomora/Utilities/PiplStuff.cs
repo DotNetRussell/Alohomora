@@ -7,6 +7,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using System.Windows;
 
 namespace Alohomora.Utilities
 {
@@ -64,7 +65,7 @@ namespace Alohomora.Utilities
                     }
                     catch (Exception e)
                     {
-                        ExecutePiplRequest(url, callback);
+                        MessageBox.Show(string.Format("{0}"+System.Environment.NewLine+"{1}",e.Message,e.InnerException.Message),"There was an error durring your request:", MessageBoxButton.OK, MessageBoxImage.Hand);
                     }
 
                 };

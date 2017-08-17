@@ -16,22 +16,13 @@
             Grid.Column="0"  
             BorderBrush="Black"            
             Background="White">
-            <ListView 
+            <ListView
             Padding="10" 
             BorderThickness="0"
             Background="Transparent"
-            SelectedIndex="{Binding SelectedSearchIndex, Mode=TwoWay}" 
+            ItemsSource="{Binding Modules}"
             x:Name="SearchListbox" HorizontalContentAlignment="Left"
-            SelectionMode="Single" VerticalAlignment="Top"  >
-
-                <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Center" ToolTip="Welcome Page">
-                    <TextBlock TextWrapping="Wrap" HorizontalAlignment="Stretch" FontSize="30" FontWeight="Bold" Background="white" Padding="10" >Welcome</TextBlock>
-                </Border>
-                <Image Source="/Images/fbl.png" Height="75" ToolTip="Log into Facebook" />
-                <Image Source="/Images/american-flag.png" Height="80" ToolTip="Search Voter DataBase"/>
-                <Image Source="/Images/fbd.png"  Height="90" ToolTip="Search Facebook"/>
-                <Image Source="/Images/configure.png" Height="90" ToolTip="Tweek Regexes" />
-                <Image Source="/Images/Settings-icon.png" Height="90" ToolTip="Configure Alohomora"/>
+            SelectionMode="Single" VerticalAlignment="Top" >
                 <ListView.ItemContainerStyle>
                     <Style TargetType="{x:Type ListViewItem}">
                         <Setter Property="Background" Value="Transparent" />
@@ -42,16 +33,24 @@
                                 </ControlTemplate>
                             </Setter.Value>
                         </Setter>
-                        <Setter Property="Margin" Value="0,40,0,0" />
-                        <Setter Property="HorizontalContentAlignment" Value="Center" />
-                        <Setter Property="VerticalContentAlignment" Value="Center" />
                     </Style>
                 </ListView.ItemContainerStyle>
-            </ListView>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Button Command="{Binding NavCommand}" Width="80">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Image Source="{Binding Source}" Height="80"/>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>           
         </Border>
        
         <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
-            <ContentPresenter HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  x:Name="mainContentControl" />
+            <ContentPresenter HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="{Binding Content}" />
         </Border>
     </Grid>
 </Window>

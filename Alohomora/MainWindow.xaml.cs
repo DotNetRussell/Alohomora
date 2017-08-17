@@ -33,12 +33,12 @@ namespace Alohomora
 {
     public partial class MainWindow : Window
     {
-        private BrowserControl _welcomePage = new BrowserControl();
-        private FacebookLogin _facebookLogin = new FacebookLogin();
-        private SearchVoterDBControl _searchVoterDBControl = new SearchVoterDBControl();
-        private SearchFacebookControl _searchFacebookControl = new SearchFacebookControl();
-        private RegexTweeker _regexTweeker = new RegexTweeker();
-        private ConfigurationControl _configurationControl = new ConfigurationControl();
+        //private BrowserControl _welcomePage = new BrowserControl();
+        //private FacebookLogin _facebookLogin = new FacebookLogin();
+        //private SearchVoterDBControl _searchVoterDBControl = new SearchVoterDBControl();
+        //private SearchFacebookControl _searchFacebookControl = new SearchFacebookControl();
+        //private RegexTweeker _regexTweeker = new RegexTweeker();
+        //private ConfigurationControl _configurationControl = new ConfigurationControl();
 
         public MainWindow()
         {
@@ -51,38 +51,9 @@ namespace Alohomora
             ApplicationConfiguration.LoadConfig();
             // Need to wait for the window to load to initialize the view model otherwise the browser shits the bed.
             MasterViewModel viewmodel = new MasterViewModel();
-            viewmodel.OnMainColumnChanged += Viewmodel_OnMainColumnChanged;
             this.DataContext = viewmodel;
-            mainContentControl.Content = new BrowserControl();
         }
 
-        private void Viewmodel_OnMainColumnChanged(object sender, RoutedEventArgs e)
-        {
-            MainColumnChangedEventArgs args = (MainColumnChangedEventArgs)e;
-            switch (args.MainColumnIndex)
-            {
-                case 0:
-                    mainContentControl.Content = _welcomePage;
-                    break;
-                case 1:
-                    mainContentControl.Content = _facebookLogin;
-                    break;
-                case 2:
-                    mainContentControl.Content = _searchVoterDBControl;
-                    break;
-                case 3:
-                    mainContentControl.Content = _searchFacebookControl;
-                    break;
-                case 4:
-                    mainContentControl.Content = _regexTweeker;
-                    break;
-                case 5:
-                    mainContentControl.Content = _configurationControl;
-                    break;
-                default:
-                    mainContentControl.Content = _welcomePage;
-                    break;
-            }
-        }
+      
     }
 }

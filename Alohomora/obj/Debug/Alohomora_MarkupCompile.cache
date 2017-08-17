@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Alohomora Git\Alohomora\Alohomora\App.xaml
-7-1977376272
+7212633558
 
-46-1498654686
+47244199118
 20-1166649980
-MainWindow.xaml;UserControls\ConfigurationControl.xaml;UserControls\FacebookLogin.xaml;UserControls\BrowserControl.xaml;UserControls\RegexTweeker.xaml;UserControls\SearchFacebookControl.xaml;UserControls\SearchVoterDBControl.xaml;
+MainWindow.xaml;Modules\Configuration\ConfigurationControl.xaml;Modules\FacebookLogin\FacebookLogin.xaml;Modules\FacebookSearch\SearchFacebookControl.xaml;Modules\RegexTweeker\RegexTweeker.xaml;Modules\VoterDatabase\SearchVoterDBControl.xaml;UserControls\BrowserControl.xaml;
 
 False
 
