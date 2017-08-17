@@ -9,8 +9,6 @@
 <center>
 </br>
 </br>
-<img src="https://vignette2.wikia.nocookie.net/harrypotter/images/3/3e/Unlocking_charm1.gif/revision/latest?cb=20140811055322" width="5000"/>
-
 <h2> Road Map for DerbyCon release</h2>
 <ul>
 <li>✔ COMPLETED ✔ Regex customization and config section for easy on the fly updates</li>
