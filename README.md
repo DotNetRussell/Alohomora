@@ -15,6 +15,7 @@
 <ul>
 <li>✔ COMPLETED ✔ Regex customization and config section for easy on the fly updates</li>
 <li>✔ COMPLETED ✔ Implement easy module creation for new development 
+<li>Implement new UI layout</li>
 <li>Link voter db results to pipl search</li>
 <li>Clean up project files</li>
 <li>Display target's co-workers scraped from facebook</li>
