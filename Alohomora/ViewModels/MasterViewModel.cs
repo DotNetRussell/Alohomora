@@ -20,12 +20,7 @@ namespace Alohomora.ViewModels
     {
         public ObservableCollection<Module> Modules { get; set; }
         public DependencyObject Content  { get; set; }
-
-
-        private int _selectedSearchIndex;
-        public event RoutedEventHandler OnMainColumnChanged;
-        public delegate void MainColumnChanged(object sender, RoutedEventArgs e);
-
+        
         public class MainColumnChangedEventArgs : RoutedEventArgs
         {
             public int MainColumnIndex { get; set; }
@@ -71,21 +66,7 @@ namespace Alohomora.ViewModels
                 Modules.Add(_module);
             }
         }
-
-        /// <summary>
-        /// I did this stupid thing with the navigation panel because I was to lazy to do it the correct way.
-        /// Now it looks like garbage and it took me just as long to do if not longer....
-        /// Don't do this... Don't be Anthony...
-        /// </summary>
-        public int SelectedSearchIndex
-        {
-            get { return _selectedSearchIndex; }
-            set {
-                    _selectedSearchIndex = value;
-                    OnPropertyChanged("SelectedSearchIndex");
-                    OnMainColumnChanged(this, (new MainColumnChangedEventArgs() { MainColumnIndex = value }));
-                }
-        }
+        
     }
 
     public class Module

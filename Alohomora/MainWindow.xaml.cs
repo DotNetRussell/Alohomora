@@ -33,25 +33,17 @@ namespace Alohomora
 {
     public partial class MainWindow : Window
     {
-        //private BrowserControl _welcomePage = new BrowserControl();
-        //private FacebookLogin _facebookLogin = new FacebookLogin();
-        //private SearchVoterDBControl _searchVoterDBControl = new SearchVoterDBControl();
-        //private SearchFacebookControl _searchFacebookControl = new SearchFacebookControl();
-        //private RegexTweeker _regexTweeker = new RegexTweeker();
-        //private ConfigurationControl _configurationControl = new ConfigurationControl();
-
         public MainWindow()
         {
             InitializeComponent();
             this.Loaded += MainWindow_Loaded;
         }
         
-        private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             ApplicationConfiguration.LoadConfig();
             // Need to wait for the window to load to initialize the view model otherwise the browser shits the bed.
-            MasterViewModel viewmodel = new MasterViewModel();
-            this.DataContext = viewmodel;
+            this.DataContext = new MasterViewModel(); 
         }
 
       
