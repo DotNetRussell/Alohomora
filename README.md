@@ -16,6 +16,8 @@
 <li>✔ COMPLETED ✔ Regex customization and config section for easy on the fly updates</li>
 <li>✔ COMPLETED ✔ Implement easy module creation for new development 
 <li>Implement new UI layout</li>
+<li>Cache all target data in a centeral location for display and use</li>
+<li>SMS Spoofing Module</li>
 <li>Link voter db results to pipl search</li>
 <li>Clean up project files</li>
 <li>Display target's co-workers scraped from facebook</li>
@@ -23,8 +25,7 @@
 <li>Display target's checkins scraped from facebook</li>
 <li>Export targets to CSV</li>
 <li>Add a map view and street view of target's home address</li>
-<li>Incorperate some data breach data. Possibly from yahoo and/or ashely madison?</li>
-<li>Cache all target data in a centeral location for display and use</li>
+<li>Incorperate data breach data Module. Possibly from yahoo and/or ashely madison?</li>
 <li>Add wait dialog for spouse search voter database screen</li>
 </ul>
 <hr/>
