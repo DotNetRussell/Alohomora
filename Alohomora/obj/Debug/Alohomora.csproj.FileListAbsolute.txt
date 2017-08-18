@@ -107,4 +107,3 @@ D:\Alohomora Git\Alohomora\Alohomora\bin\Debug\Modules\FacebookLogin\Images\modu
 D:\Alohomora Git\Alohomora\Alohomora\bin\Debug\Modules\Configuration\Images\module_icon.png
 D:\Alohomora Git\Alohomora\Alohomora\bin\Debug\Modules\RegexTweeker\Images\module_icon.png
 D:\Alohomora Git\Alohomora\Alohomora\bin\Debug\Images\home_icon.png
-D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\Alohomora.csprojResolveAssemblyReference.cache

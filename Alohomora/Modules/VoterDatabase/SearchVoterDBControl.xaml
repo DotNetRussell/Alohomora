@@ -18,7 +18,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <StackPanel Margin="0,0,5,0" Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Orientation="Vertical">
-            <Image Source="/images/american-flag.png" />
+            <Image Source="/Modules/VoterDatabase/Images/american-flag.png" />
             <StackPanel HorizontalAlignment="Stretch" Orientation="Vertical">
                 <TextBlock FontSize="20" FontWeight="Bold">First Name</TextBlock>
                 <TextBox FontSize="20" Text="{Binding FirstName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
@@ -98,7 +98,7 @@
                                     <TextBlock>
                                     <Hyperlink TextDecorations="None" NavigateUri="{Binding ProfileLink}" RequestNavigate="Hyperlink_RequestNavigate">
                                         <StackPanel Orientation="Vertical" Margin="50,0,0,0">
-                                                <Image VerticalAlignment="Top" Source="/Images/fbd.png" Width="25"/>
+                                                <Image VerticalAlignment="Top" Source="/Modules/VoterDatabase/Images/fbd.png" Width="25"/>
                                                 <TextBlock VerticalAlignment="Bottom" Margin="0,0,10,0">Visit Page</TextBlock>
                                         </StackPanel>
                                     </Hyperlink>
@@ -151,9 +151,9 @@
         <Button VerticalAlignment="Bottom" FontWeight="Bold"  Background="Lime" Height="50" Command="{Binding ScanFacebookCommand}" Grid.Column="1" Grid.Row="1">SCAN FOR FACEBOOK PROFILE</Button>
         <Border BorderThickness="2" Grid.RowSpan="2" BorderBrush="Black" VerticalAlignment="Stretch" Grid.Column="3">
             <StackPanel VerticalAlignment="Center" >
-                <Image Source="/Images/pip.png"/>
+                <Image Source="/Modules/VoterDatabase/Images/pipl.png"/>
                 <TextBlock Width="220" FontWeight="Bold" TextWrapping="Wrap" FontSize="50" Text="COMING SOON SEND TO PIPL API"/>
-                <Image Source="/Images/pip.png"/>
+                <Image Source="/Modules/VoterDatabase/Images/pipl.png"/>
             </StackPanel>
         </Border>
     </Grid>

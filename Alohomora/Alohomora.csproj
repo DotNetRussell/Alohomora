@@ -193,21 +193,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\american-flag.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\pip.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\link.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\american-flag-disabled.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\fbd.png" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Modules\FacebookSearch\Images\module_icon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -236,6 +221,34 @@
     <EmbeddedResource Include="Images\home_icon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Modules\VoterDatabase\Images\fbd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Modules\VoterDatabase\Images\american-flag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Modules\VoterDatabase\Images\pipl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Modules\FacebookSearch\Images\american-flag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Modules\FacebookSearch\Images\pipl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Modules\FacebookSearch\Images\link.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\fbd.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Modules\FacebookSearch\Images\fbd.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

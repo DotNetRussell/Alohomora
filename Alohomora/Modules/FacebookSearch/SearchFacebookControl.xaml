@@ -50,28 +50,28 @@
                             <Button CommandParameter="{Binding}" Command="{Binding ElementName=UserControl, Path=DataContext.SearchPiplAPICommand}">
                                 <Button.Template>
                                     <ControlTemplate>
-                                        <Image Margin="5" Height="25" Width="30" Source="/images/pip.png" />
+                                        <Image Margin="5" Height="25" Width="30" Source="/Modules/FacebookSearch/Images/pipl.png" />
                                     </ControlTemplate>
                                 </Button.Template>
                             </Button>
                             <Button CommandParameter="{Binding TargetUrl}" Command="{Binding ElementName=UserControl, Path=DataContext.OpenFacebookUrlCommand}"  >
                                 <Button.Template>
                                     <ControlTemplate>
-                                        <Image Margin="5" Height="25" Width="30" Source="/images/link.png" />
+                                        <Image Margin="5" Height="25" Width="30" Source="/Modules/FacebookSearch/Images/link.png" />
                                     </ControlTemplate>
                                 </Button.Template>
                             </Button>
                             <Button CommandParameter="{Binding}" Command="{Binding ElementName=UserControl, Path=DataContext.SearchVoterDBCommand}">
                                 <Button.Template>
                                     <ControlTemplate>
-                                        <Image Margin="5" Height="25" Width="30" Source="/images/american-flag.png" />
+                                        <Image Margin="5" Height="25" Width="30" Source="/Modules/FacebookSearch/Images/american-flag.png" />
                                     </ControlTemplate>
                                 </Button.Template>
                             </Button>
                             <Button CommandParameter="{Binding}" Command="{Binding ElementName=UserControl, Path=DataContext.ScrapeFacebookCommand}">
                                 <Button.Template>
                                     <ControlTemplate>
-                                        <Image Margin="5" Height="25" Width="30" Source="/images/fbd.png" />
+                                        <Image Margin="5" Height="25" Width="30" Source="/Modules/FacebookSearch/Images/fbd.png" />
                                     </ControlTemplate>
                                 </Button.Template>
                             </Button>
