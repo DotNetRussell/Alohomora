@@ -13,11 +13,12 @@
 <ul>
 <li>✔ COMPLETED ✔ Regex customization and config section for easy on the fly updates</li>
 <li>✔ COMPLETED ✔ Implement easy module creation for new development 
-<li>Implement new UI layout</li>
-<li>Cache all target data in a centeral location for display and use</li>
-<li>SMS Spoofing Module</li>
+<li>✔ COMPLETED ✔Implement new UI layout</li>
+<li>✔ COMPLETED ✔Cache all target data in a centeral location for display and use</li>
+<li>✔ COMPLETED ✔SMS Spoofing Module</li>
+<li>✔ COMPLETED ✔Clean up project files</li>
+<li>Add a target profile details page</li>
 <li>Link voter db results to pipl search</li>
-<li>Clean up project files</li>
 <li>Display target's co-workers scraped from facebook</li>
 <li>Display target's apps scraped from facebook</li>
 <li>Display target's checkins scraped from facebook</li>
