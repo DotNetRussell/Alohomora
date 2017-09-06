@@ -67,7 +67,7 @@ namespace Alohomora.ViewModels
         public ICommand ModifiedVoterDBSearchCommand { get; set; }
         public ICommand ModifiedVoterDBSearchSpouseCommand { get; set; }
         public ICommand SearchPiplAPICommand { get; set; }
-
+        public ICommand AddToTargetDashboard { get; set; }
         #endregion
 
         #region Constructor
@@ -81,20 +81,70 @@ namespace Alohomora.ViewModels
             ScrapeFacebookCommand = new ButtonCommand(CanExecuteFacebookScrapeCommand, FacebookScrapeExecuted);
             SearchPiplAPICommand = new ButtonCommand(CanExecutePiplApiSearch, PiplApiSearchExecuted);
             ModifiedVoterDBSearchCommand = new ButtonCommand(CanExecuteModifiedSearchVoterDBCommand, ExecutedModifiedSearchVoterDBCommand);
+            AddToTargetDashboard = new ButtonCommand(CanConvertToPersonModel, ConvertToPersonModelExecuted);
             LoadCustomConfiguration();
         }
 
         #endregion
 
-        private void LoadCustomConfiguration()
+        #region Command Handlers
+
+        public bool CanConvertToPersonModel(object args)
         {
-            if (!FacebookRegexConfiguration.LoadCustomRegexes())
-            {
-                FacebookRegexConfiguration.LoadDefaults();
-            }
+            return true;
         }
 
-        #region Command Handlers
+        public void ConvertToPersonModelExecuted(object args)
+        {
+            PersonModel personModel = new PersonModel();
+
+            FacebookLinkModel facebookLinkModel = SelectedFacebookLinkModel;
+
+            personModel.ImageUrls.Add(facebookLinkModel.ProfileImage);
+            personModel.Jobs.AddRange(facebookLinkModel.Jobs);
+            personModel.Names.Add(facebookLinkModel.DisplayName);
+            personModel.Names.Add(facebookLinkModel.FirstName + " " + facebookLinkModel.LastName);
+            if (facebookLinkModel.PossibleLinks != null && facebookLinkModel.PossibleLinks.Count > 0)
+            {
+                DBLinkModel dblink = facebookLinkModel.PossibleLinks.FirstOrDefault();
+                personModel.Names.Add(dblink.FormatedName);
+                personModel.Dobs.Add(dblink.dob);
+                personModel.Addresses.Add(dblink.address);
+            }
+            foreach (Person pipLink in facebookLinkModel.PiplLinks)
+            {
+                if (!pipLink.Selected)
+                {
+                    continue;
+                }
+                foreach (Name name in pipLink.names)
+                {
+                    personModel.Names.Add(name.display);
+                }
+                foreach (Address address in pipLink.addresses)
+                {
+                    personModel.Addresses.Add(address.display);
+                }
+                foreach (Job job in pipLink.jobs)
+                {
+                    personModel.Jobs.Add(job.display);
+                }
+                foreach (Phone phone in pipLink.phones)
+                {
+                    personModel.PhoneNumbers.Add(phone.display);
+                }
+                foreach (Image image in pipLink.images)
+                {
+                    personModel.ImageUrls.Add(image.url);
+                }
+                foreach (Education education in pipLink.educations)
+                {
+                    personModel.Schools.Add(education.school + " - " + education.degree);
+                }
+            }
+
+            MasterTargetListViewModel.AddTarget(personModel);
+        }
 
         public bool CanExecutePiplApiSearch(object args)
         {
@@ -198,14 +248,14 @@ namespace Alohomora.ViewModels
             if (facebookLinkModel.PossibleSpouseLinks != null && facebookLinkModel.PossibleSpouseLinks != null && facebookLinkModel.PossibleLinks.Count > 0 && facebookLinkModel.PossibleSpouseLinks.Count > 0)
             {
                 bool matched = false;
-                foreach (PersonModel possibleLink in facebookLinkModel.PossibleLinks)
+                foreach (DBLinkModel possibleLink in facebookLinkModel.PossibleLinks)
                 {
                     if (matched)
                     {
                         break;
                     }
 
-                    foreach (PersonModel possibleSpouseLink in facebookLinkModel.PossibleSpouseLinks)
+                    foreach (DBLinkModel possibleSpouseLink in facebookLinkModel.PossibleSpouseLinks)
                     {
                         if (possibleLink.address == possibleSpouseLink.address)
                         {
@@ -392,6 +442,14 @@ namespace Alohomora.ViewModels
         #endregion
 
         #region Private Functions
+
+        private void LoadCustomConfiguration()
+        {
+            if (!FacebookRegexConfiguration.LoadCustomRegexes())
+            {
+                FacebookRegexConfiguration.LoadDefaults();
+            }
+        }
 
         private async void RunSpouseQuery(FacebookLinkModel facebookLinkModel)
         {

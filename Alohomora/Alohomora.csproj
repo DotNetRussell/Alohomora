@@ -45,6 +45,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -70,6 +71,7 @@
     </ApplicationDefinition>
     <Compile Include="Models\FacebookLinkModel.cs" />
     <Compile Include="Models\ModelBase.cs" />
+    <Compile Include="Models\DBLinkModel.cs" />
     <Compile Include="Models\PersonModel.cs" />
     <Compile Include="Models\piplModels\Address.cs" />
     <Compile Include="Models\piplModels\DateRange.cs" />
@@ -85,7 +87,6 @@
     <Compile Include="Models\piplModels\Query.cs" />
     <Compile Include="Models\piplModels\RootResult.cs" />
     <Compile Include="Models\piplModels\Url.cs" />
-    <Compile Include="Models\ReverseQueryModel.cs" />
     <Compile Include="Models\UsernameLinkModel.cs" />
     <Compile Include="Modules\Configuration\ConfigurationControl.xaml.cs">
       <DependentUpon>ConfigurationControl.xaml</DependentUpon>
@@ -99,6 +100,15 @@
     <Compile Include="Modules\RegexTweeker\RegexTweeker.xaml.cs">
       <DependentUpon>RegexTweeker.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modules\SMS\SMSControl.xaml.cs">
+      <DependentUpon>SMSControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SMS\SMSViewModel.cs" />
+    <Compile Include="Modules\SMS\TextBeltViewModel.cs" />
+    <Compile Include="UserControls\TargetProfileDashboard.xaml.cs">
+      <DependentUpon>TargetProfileDashboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\AlohomoraServices.cs" />
     <Compile Include="Utilities\ModuleEntryPoint.cs" />
     <Compile Include="Modules\VoterDatabase\SearchVoterDBControl.xaml.cs">
       <DependentUpon>SearchVoterDBControl.xaml</DependentUpon>
@@ -114,13 +124,15 @@
     <Compile Include="Utilities\FacebookStuff.cs" />
     <Compile Include="Utilities\PiplStuff.cs" />
     <Compile Include="Utilities\RelationshipStuff.cs" />
-    <Compile Include="Utilities\Reporting.cs" />
+    <Compile Include="Modules\SMS\TextBeltStuff.cs" />
+    <Compile Include="Utilities\Serializer.cs" />
     <Compile Include="Utilities\WebProxyStuff.cs" />
-    <Compile Include="ViewModels\ConfigurationViewModel.cs" />
+    <Compile Include="Modules\Configuration\ConfigurationViewModel.cs" />
+    <Compile Include="ViewModels\MasterTargetListViewModel.cs" />
     <Compile Include="ViewModels\MasterViewModel.cs" />
-    <Compile Include="ViewModels\RegexTweekerViewModel.cs" />
-    <Compile Include="ViewModels\SearchFacebookViewModel.cs" />
-    <Compile Include="ViewModels\SearchVoterDatabaseViewModel.cs" />
+    <Compile Include="Modules\RegexTweeker\RegexTweekerViewModel.cs" />
+    <Compile Include="Modules\FacebookSearch\SearchFacebookViewModel.cs" />
+    <Compile Include="Modules\VoterDatabase\SearchVoterDatabaseViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -150,11 +162,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Modules\SMS\SMSControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Modules\VoterDatabase\SearchVoterDBControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControls\BrowserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\TargetProfileDashboard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -249,6 +269,11 @@
     <Resource Include="Modules\FacebookSearch\Images\fbd.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Modules\SMS\Images\module_icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

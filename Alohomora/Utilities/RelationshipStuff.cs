@@ -10,7 +10,7 @@ namespace Alohomora.Utilities
 {
     public static class RelationshipStuff
     {
-        public static double GetConfidenceLevel(PersonModel targetModel, string source)
+        public static double GetConfidenceLevel(DBLinkModel targetModel, string source)
         {
             double confidenceLevel = 0.0;
             string realName =  FacebookStuff.GetRealNameFromProfilePage(source);            
@@ -22,7 +22,7 @@ namespace Alohomora.Utilities
             return confidenceLevel;
         }
         
-        private static double ScoreCityState(PersonModel personModel, List<string> details)
+        private static double ScoreCityState(DBLinkModel personModel, List<string> details)
         {
             double returnScore = 0.0;
 
@@ -70,7 +70,7 @@ namespace Alohomora.Utilities
             return returnScore;
         }        
 
-        private static double ScoreRealName(PersonModel personModel, string realname)
+        private static double ScoreRealName(DBLinkModel personModel, string realname)
         {
             double returnScore = 0.0;
 

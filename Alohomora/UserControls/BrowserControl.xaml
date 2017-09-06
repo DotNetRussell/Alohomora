@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Alohomora.UserControls"
-             mc:Ignorable="d" 
+             mc:Ignorable="d" MaxWidth="1500"
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <WebBrowser Source="https://www.DotNetRussell.com/alohamora.html"/>

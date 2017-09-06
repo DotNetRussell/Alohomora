@@ -131,33 +131,33 @@ namespace Alohomora.Models
         }
 
 
-        private PersonModel _voterDBMatch;
+        private DBLinkModel _voterDBMatch;
 
-        public PersonModel VoterDBMatch
+        public DBLinkModel VoterDBMatch
         {
             get { return _voterDBMatch; }
             set { _voterDBMatch = value; OnPropertyChanged("VoterDBMatch"); }
         }
 
-        private PersonModel _spouseVoterDBMatch;
+        private DBLinkModel _spouseVoterDBMatch;
 
-        public PersonModel SouseVoterDBMatch
+        public DBLinkModel SouseVoterDBMatch
         {
             get { return _spouseVoterDBMatch; }
             set { _spouseVoterDBMatch = value; OnPropertyChanged("SpouseVoterDBMatch"); }
         }
         
-        private List<PersonModel> _possibleLinks;
+        private List<DBLinkModel> _possibleLinks;
 
-        public List<PersonModel> PossibleLinks
+        public List<DBLinkModel> PossibleLinks
         {
             get { return _possibleLinks; }
             set { _possibleLinks = value; OnPropertyChanged("PossibleLinks"); }
         }
 
-        private List<PersonModel> _possibleSpouseLinks;
+        private List<DBLinkModel> _possibleSpouseLinks;
 
-        public List<PersonModel> PossibleSpouseLinks
+        public List<DBLinkModel> PossibleSpouseLinks
         {
             get { return _possibleSpouseLinks; }
             set { _possibleSpouseLinks = value; OnPropertyChanged("PossibleSpouseLinks"); }
@@ -207,6 +207,10 @@ namespace Alohomora.Models
         public FacebookLinkModel()
         {
             TargetId = Guid.NewGuid();
+            _jobs = new List<string>();
+            _targetDetails = new List<string>();
+            _parsedDetails = new List<string>();
+            _piplLinks = new Person[0];
         }
     }
 }

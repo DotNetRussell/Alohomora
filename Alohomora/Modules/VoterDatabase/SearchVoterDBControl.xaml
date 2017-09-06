@@ -149,7 +149,7 @@
         </StackPanel>
         
         <Button VerticalAlignment="Bottom" FontWeight="Bold"  Background="Lime" Height="50" Command="{Binding ScanFacebookCommand}" Grid.Column="1" Grid.Row="1">SCAN FOR FACEBOOK PROFILE</Button>
-        <Border BorderThickness="2" Grid.RowSpan="2" BorderBrush="Black" VerticalAlignment="Stretch" Grid.Column="3">
+        <Border Width="220" BorderThickness="2" Grid.RowSpan="2" BorderBrush="Black" VerticalAlignment="Stretch" Grid.Column="3">
             <StackPanel VerticalAlignment="Center" >
                 <Image Source="/Modules/VoterDatabase/Images/pipl.png"/>
                 <TextBlock Width="220" FontWeight="Bold" TextWrapping="Wrap" FontSize="50" Text="COMING SOON SEND TO PIPL API"/>

@@ -11,14 +11,14 @@ namespace Alohomora.Utilities
 {
     public static class FacebookStuff
     {
-        public static string FormatQueryURL(PersonModel target)
+        public static string FormatQueryURL(DBLinkModel target)
         {
             StringBuilder builder = new StringBuilder();
             builder.Append(FacebookRegexConfiguration.FacebookQueryURL + target.firstname + "+" + target.lastname + "+" + target.state);
             return builder.ToString();
         }
 
-        public static UsernameLinkModel ExtractUsernamesFromSource(PersonModel target, string source)
+        public static UsernameLinkModel ExtractUsernamesFromSource(DBLinkModel target, string source)
         {
             //Unauthenticated pattern
             //string pattern = @"(?<=<a class=""_42ft _4jy0 _4jy3 _517h _51sy"" role=""button"" href=""https:\/\/www.facebook.com\/).*?(?=\/photos"")";

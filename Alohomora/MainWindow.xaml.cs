@@ -28,6 +28,7 @@ using Alohomora.ViewModels;
 using static Alohomora.ViewModels.MasterViewModel;
 using Alohomora.UserControls;
 using Alohomora.Models.piplModels;
+using System.ComponentModel;
 
 namespace Alohomora
 {
@@ -42,10 +43,23 @@ namespace Alohomora
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             ApplicationConfiguration.LoadConfig();
-            // Need to wait for the window to load to initialize the view model otherwise the browser shits the bed.
+
+            // Need to wait for the window to load to initialize 
+            // the view model otherwise the browser shits the bed.
             this.DataContext = new MasterViewModel(); 
         }
 
-      
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            // Make sure to cache the profiles before we close
+            MasterTargetListViewModel.SaveTargetProfiles();
+
+            Window _window = Window.GetWindow(this);
+            foreach(Window win in _window.OwnedWindows)
+            {
+                win.Close();
+            }            
+        }
     }
 }

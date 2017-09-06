@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             x:Name="UserControl"
+             x:Name="UserControl" Width="Auto"
              mc:Ignorable="d" >
     <Grid>
         <Grid.ColumnDefinitions>
@@ -25,7 +25,7 @@
                 HorizontalAlignment="Stretch" 
                 VerticalAlignment="Top"  >$$$~~~Click here to Import into Alohomora~~~$$$</Button>
         <WebBrowser Grid.Column="0" Grid.ColumnSpan="2" x:Name="FaceBookBrowser" Grid.Row="1" 
-                    Source="https://www.facebook.com/find-friends/browser/" 
+                    Source="https://www.facebook.com/find-friends/browser/" MaxWidth="1200"
                     HorizontalAlignment="Stretch"  VerticalAlignment="Stretch"/>
         
         <ListBox Grid.Column="0" VerticalAlignment="Stretch" 
@@ -97,7 +97,10 @@
                     </Grid.ColumnDefinitions>
 
                     <StackPanel Orientation="Vertical" Grid.Column="0" Margin="0,0,40,0" >
-                        <Button Click="BackToSearchClicked" HorizontalAlignment="Left" FontSize="20" Width="150">Back to search</Button>
+                        <StackPanel Orientation="Horizontal">
+                        <Button ToolTip="Back to Facebook Search" Click="BackToSearchClicked" HorizontalAlignment="Left" FontSize="20" >🔎</Button>
+                        <Button Command="{Binding AddToTargetDashboard}" ToolTip="Add to Target Dashboard" HorizontalAlignment="Left" FontSize="20" >★★★</Button>
+                        </StackPanel>
                         <Image HorizontalAlignment="Left" Source="{Binding ElementName=FacebookListBox, Path=SelectedItem.ProfileImage}" Width="200" Height="200"/>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock FontSize="20" FontWeight="Bold" Text="Name: "/>
@@ -335,6 +338,7 @@
                                                 <ColumnDefinition Width=".33*"/>
                                             </Grid.ColumnDefinitions>
                                             <StackPanel Orientation="Vertical" Grid.Column="0" >
+                                                <CheckBox IsChecked="{Binding Selected,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Content="Export" />
                                                 <TextBlock Margin="5,0,0,0" Text="Names: " FontWeight="Bold" />
                                                 <ListView
                                                     ItemsSource="{Binding names}" HorizontalAlignment="Left" 

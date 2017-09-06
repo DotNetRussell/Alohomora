@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="Alohomora.Modules.SMS.SMSControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Alohomora.Modules.SMS"
+             mc:Ignorable="d"  Width="900" HorizontalAlignment="Left"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid HorizontalAlignment="Left">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" Height="30" VerticalAlignment="Top" FontSize="20" Command="{Binding RefreshContactsCommand}">Refresh Contacts</Button>
+        <Border Grid.Row="1" DataContext="{Binding TextBeltVM}" 
+                Grid.Column="0" Padding="5" HorizontalAlignment="Left" 
+                BorderBrush="Black" BorderThickness="1" >
+            <StackPanel>
+                <TextBlock FontSize="30" FontWeight="Bold">TextBelt SMS</TextBlock>
+                <TextBlock FontSize="20">API Key</TextBlock>
+                <TextBox Text="{Binding APIKey,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <TextBlock FontSize="20">Target Phone Number</TextBlock>
+                <TextBox Text="{Binding PhoneNumber,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <TextBlock FontSize="20">Message</TextBlock>
+                <TextBox Height="50" TextWrapping="Wrap" Text="{Binding Message,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <Button Command="{Binding SendMessageCommand}" Margin="0,10,0,0" FontSize="20">Send Message</Button>
+            </StackPanel>
+        </Border>
+        <ListView Grid.RowSpan="2" Grid.Column="1" ItemsSource="{Binding TargetProfiles}">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Setter Property="Background" Value="Transparent" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type ListViewItem}">
+                                <ContentPresenter HorizontalAlignment="Left" />
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{Binding ImageUrl}" Width="100" Grid.Column="0" />
+                        <StackPanel Grid.Column="1" >
+                            <TextBlock Text="{Binding Name}"/>
+                            <ListView ItemsSource="{Binding PhoneNumbers}">
+                                <ListView.ItemContainerStyle>
+                                    <Style TargetType="{x:Type ListViewItem}">
+                                        <Setter Property="Background" Value="Transparent" />
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type ListViewItem}">
+                                                    <ContentPresenter />
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </ListView.ItemContainerStyle>
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding}"/>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</UserControl>

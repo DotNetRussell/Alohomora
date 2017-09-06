@@ -35,7 +35,7 @@ namespace Alohomora.ViewModels
         /// <summary>
         /// A collection of rows returned from a database query
         /// </summary>
-        public ObservableCollection<PersonModel> DatabaseSearchResults { get; set; }
+        public ObservableCollection<DBLinkModel> DatabaseSearchResults { get; set; }
 
         /// <summary>
         /// A collection of targets returned from scraping facebook
@@ -152,12 +152,12 @@ namespace Alohomora.ViewModels
         /// <summary>
         /// Selected Person Model in 
         /// </summary>
-        public PersonModel SelectedPerson { get; set; }
+        public DBLinkModel SelectedPerson { get; set; }
 
         public SearchVoterDatabaseViewModel()
         {
             DateOfBirth = DateTime.Now;
-            DatabaseSearchResults = new ObservableCollection<PersonModel>();
+            DatabaseSearchResults = new ObservableCollection<DBLinkModel>();
             TopTargets = new ObservableCollection<LinkModel>();
             TargetLinks = new ObservableCollection<UsernameLinkModel>();
             SearchDatabaseCommand = new ButtonCommand(CanExecuteSearchCommand, SearchCommandExecuted);
@@ -255,7 +255,7 @@ namespace Alohomora.ViewModels
             List<UsernameLinkModel> tempLinks = new List<UsernameLinkModel>();
             try
             {
-                IEnumerable<PersonModel> tmpCache = DatabaseSearchResults.Where(pm => pm.IsSelected);
+                IEnumerable<DBLinkModel> tmpCache = DatabaseSearchResults.Where(pm => pm.IsSelected);
                 foreach (var item in tmpCache)
                 {
                     var temp = TargetLinks.Where(tl => tl.id == item.Id && tl.usernames.Count > 0);
@@ -275,7 +275,7 @@ namespace Alohomora.ViewModels
                 // First we run over our list of voter db targets
                 Parallel.ForEach(tmpCache, async pm =>
                 {
-                    PersonModel target = pm;
+                    DBLinkModel target = pm;
 
                     Console.WriteLine("Running search on target: " + target.firstname + " " + target.lastname);
 
@@ -295,9 +295,7 @@ namespace Alohomora.ViewModels
 
                     // Link made
                     TargetLinks.Add(FacebookStuff.ExtractUsernamesFromSource(target, source));
-
-                    Reporting.PrintReport(TargetLinks.ToList());
-
+                    
                     if (requests.Count == 0)
                     {
                         // For each link made

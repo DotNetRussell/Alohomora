@@ -1,85 +1,185 @@
-﻿using System;
+﻿using Alohomora.Utilities;
+using Alohomora.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Script.Serialization;
+using System.Windows;
+using System.Windows.Input;
 
 namespace Alohomora.Models
 {
     public class PersonModel : ModelBase
     {
-        private Guid _Id;
+        private Guid _personId = Guid.NewGuid();
 
-        public Guid Id
+        private string _fullName;
+
+        private string _imageUrl;
+
+        private List<string> _jobs;
+
+        private List<string> _schools;
+
+        private List<string> _details;
+
+        private List<string> _addresses;
+
+        private List<string> _imageUrls;
+
+        private List<string> _names;
+
+        private List<string> _phoneNumbers;
+
+        private List<string> _dobs;
+
+        public string Name
         {
-            get { return _Id; }
-            set { _Id = value; OnPropertyChanged("Id"); }
+            get { return _names.FirstOrDefault(); }
         }
 
-        private string _firstName;
-
-        public string firstname
+        public string ImageUrl
         {
-            get { return _firstName; }
-            set { _firstName = value; OnPropertyChanged("firstname"); }
+            get { return _imageUrls.FirstOrDefault(); }
         }
 
-        private string _lastname;
-
-        public string lastname
+        public string Dob
         {
-            get { return _lastname; }
-            set { _lastname = value; OnPropertyChanged("lastname"); }
+            get { return _dobs.FirstOrDefault(); }
         }
 
-        private string _address;
-
-        public string address
+        public List<string> Names
         {
-            get { return _address; }
-            set { _address = value; OnPropertyChanged("address"); }
+            get { return _names; }
+            set { _names = value; }
         }
 
-        private string _city;
-
-        public string city
+        public List<string> Dobs
         {
-            get { return _city; }
-            set { _city = value; OnPropertyChanged("city"); }
+            get { return _dobs; }
+            set { _dobs = value; }
         }
 
-        private string _state;
-
-        public string state
+        public List<string> PhoneNumbers
         {
-            get { return _state; }
-            set { _state = value; OnPropertyChanged("state"); }
+            get { return _phoneNumbers; }
+            set { _phoneNumbers = value; }
         }
 
-        private string _dob;
-
-        public string dob
+        public List<string> ImageUrls
         {
-            get { return _dob; }
-            set { _dob = value; OnPropertyChanged("dob"); }
+            get { return _imageUrls; }
+            set { _imageUrls = value; }
         }
 
-        private bool _isSelected;
-
-        public bool IsSelected
+        public List<string> Addresses
         {
-            get { return _isSelected; }
-            set { _isSelected = value; OnPropertyChanged("IsSelected"); }
+            get { return _addresses; }
+            set { _addresses = value; }
         }
 
-        public string FormatedName
+        public List<string> Details
+        {
+            get { return _details; }
+            set { _details = value; }
+        }
+
+        public List<string> Schools
+        {
+            get { return _schools; }
+            set { _schools = value; }
+        }
+
+        public List<string> Jobs
+        {
+            get { return _jobs; }
+            set { _jobs = value; }
+        }
+
+        private List<string> _notes;
+
+        public List<string> Notes
+        {
+            get { return _notes; }
+            set { _notes = value; }
+        }
+
+        public Guid PersonId
+        {
+            get { return _personId; }
+        }
+
+        public int JobsCount
         {
             get
             {
-                return string.Format("{0} {1}", firstname, lastname);
+                return _jobs.Count;
             }
         }
 
+        public int SchoolsCount
+        {
+            get
+            {
+                return _schools.Count;
+            }
+        }
+
+        public int AddressesCount
+        {
+            get
+            {
+                return _addresses.Count;
+            }
+        }
+
+        public int PhoneNumbersCount
+        {
+            get
+            {
+                return _phoneNumbers.Count;
+            }
+        }
+        
+        [ScriptIgnore]
+        public ICommand DeleteItemCommand { get; set; }
+
+        public PersonModel()
+        {
+            _jobs = new List<string>();
+            _schools = new List<string>();
+            _details = new List<string>();
+            _addresses = new List<string>();
+            _imageUrls = new List<string>();
+            _names = new List<string>();
+            _dobs = new List<string>();
+            _phoneNumbers = new List<string>();
+            _notes = new List<string>();
+
+            DeleteItemCommand = new ButtonCommand(CanDeleteItem, DeleteItemExecuted);
+        }
+
+        public bool CanDeleteItem(Object args)
+        {
+            return true;
+        }
+
+        public void DeleteItemExecuted(Object args)
+        {
+            PersonModel personModel = args as PersonModel;
+
+            if (personModel != null)
+            {
+                MessageBoxResult result = MessageBox.Show("Delete Target Profile?", "Are you sure you'd like to delete this target profile?", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+
+                if(result == MessageBoxResult.Yes)
+                {
+                    MasterTargetListViewModel.RemoveTarget(personModel);
+                }
+            }
+        }
 
     }
 }

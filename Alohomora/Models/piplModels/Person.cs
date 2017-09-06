@@ -19,5 +19,18 @@ namespace Alohomora.Models.piplModels
         public List<Education> educations { get; set; }
         public List<Image> images { get; set; }
         public List<Url> urls { get; set; }
+        public bool Selected { get; set; }
+
+        public Person()
+        {
+            names = new List<Name>();
+            emails = new List<Email>();
+            phones = new List<Phone>();
+            addresses = new List<Address>();
+            jobs = new List<Job>();
+            educations = new List<Education>();
+            images = new List<Image>();
+            urls = new List<Url>();
+        }
     }
 }

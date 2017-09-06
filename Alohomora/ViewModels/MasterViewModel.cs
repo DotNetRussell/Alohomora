@@ -34,17 +34,30 @@ namespace Alohomora.ViewModels
                    where t.IsDefined(typeof(ITypeAttribute), inherit)
                    select t;
         }
-
+       
         public MasterViewModel()
         {
             Modules = new ObservableCollection<Module>();
 
-            Content = new BrowserControl();
+            Content = new TargetProfileDashboard();
+
+            Window _cachedWindow = Application.Current.MainWindow;
+
             OnPropertyChanged("Content");
             Modules.Add(new Module()
             {
                 IconPath = "/Images/home_icon.png",
-                NavCommand = new ButtonCommand(new Predicate<object>(obj => { return true; }), new Action<object>(obj => { this.Content = new BrowserControl(); OnPropertyChanged("Content"); }))
+                NavCommand = new ButtonCommand(new Predicate<object>(obj => { return true; }), 
+                new Action<object>(obj => 
+                {
+                    Window _window = new Window();
+                    _window.Content = new BrowserControl();
+                    _window.Owner = _cachedWindow;
+                    _window.MinHeight = 500;
+                    _window.MinWidth = 500;
+                    _window.SizeToContent = SizeToContent.WidthAndHeight;
+                    _window.Show();
+                }))
             });
             
 
@@ -56,12 +69,24 @@ namespace Alohomora.ViewModels
                     .FirstOrDefault().NamedArguments.Where(n => n.MemberName.Contains("ModuleIconPath"))
                     .FirstOrDefault().TypedValue.Value.ToString();
 
-                var _content = Activator.CreateInstance(module) as DependencyObject;
+                DependencyObject _content = Activator.CreateInstance(module) as DependencyObject;
                 Module _module = new Module()
                 {
                     IconPath = iconPath,
                     Content = _content,
-                    NavCommand = new ButtonCommand(new Predicate<object>(obj => { return true; }), new Action<object>(obj => { this.Content = _content; OnPropertyChanged("Content"); }))
+                    NavCommand = new ButtonCommand(
+                        new Predicate<object>(obj => 
+                                                { return true; }), 
+                                                new Action<object>(obj => 
+                                                                    {
+                                                                        Window _window = new Window();
+                                                                        _window.Content = _content;
+                                                                        _window.Owner = _cachedWindow;
+                                                                        _window.MinHeight = 500;
+                                                                        _window.MinWidth = 500;
+                                                                        _window.SizeToContent = SizeToContent.WidthAndHeight;
+                                                                        _window.Show();
+                                                                    }))
                 };
                 Modules.Add(_module);
             }

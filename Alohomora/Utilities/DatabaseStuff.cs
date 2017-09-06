@@ -145,9 +145,9 @@ namespace Alohomora.Utilities
         }
 
 
-        public static async Task<List<PersonModel>> RunQuery(string fname, string lname, string city)
+        public static async Task<List<DBLinkModel>> RunQuery(string fname, string lname, string city)
         {
-            List<PersonModel> targets = new List<PersonModel>();
+            List<DBLinkModel> targets = new List<DBLinkModel>();
             try
             {
                 InitializeDB();
@@ -163,7 +163,7 @@ namespace Alohomora.Utilities
                 while (dataReader.Read())
                 {
                     count++;
-                    PersonModel temp = new PersonModel()
+                    DBLinkModel temp = new DBLinkModel()
                     {
                         Id = Guid.NewGuid(),
                         lastname = dataReader.GetValue(0).ToString(),
@@ -189,10 +189,10 @@ namespace Alohomora.Utilities
             return targets;
         }
 
-        public static async Task<List<PersonModel>> RunQuery(string fname, string lname, DateTime dob, bool equal, bool after,
+        public static async Task<List<DBLinkModel>> RunQuery(string fname, string lname, DateTime dob, bool equal, bool after,
                                                 bool before, string streetAddress, string city, string zip)
         {
-            List<PersonModel> targets = new List<PersonModel>();
+            List<DBLinkModel> targets = new List<DBLinkModel>();
             try
             {
                 InitializeDB();
@@ -232,7 +232,7 @@ namespace Alohomora.Utilities
                 while (dataReader.Read())
                 {
                     count++;
-                    PersonModel temp = new PersonModel()
+                    DBLinkModel temp = new DBLinkModel()
                     {
                         Id = Guid.NewGuid(),
                         lastname = dataReader.GetValue(0).ToString(),
