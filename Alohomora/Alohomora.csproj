@@ -108,6 +108,9 @@
     <Compile Include="UserControls\TargetProfileDashboard.xaml.cs">
       <DependentUpon>TargetProfileDashboard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\TargetProfileDetails.xaml.cs">
+      <DependentUpon>TargetProfileDetails.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\AlohomoraServices.cs" />
     <Compile Include="Utilities\ModuleEntryPoint.cs" />
     <Compile Include="Modules\VoterDatabase\SearchVoterDBControl.xaml.cs">
@@ -133,6 +136,7 @@
     <Compile Include="Modules\RegexTweeker\RegexTweekerViewModel.cs" />
     <Compile Include="Modules\FacebookSearch\SearchFacebookViewModel.cs" />
     <Compile Include="Modules\VoterDatabase\SearchVoterDatabaseViewModel.cs" />
+    <Compile Include="ViewModels\TargetProfileViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -175,6 +179,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\TargetProfileDashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\TargetProfileDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

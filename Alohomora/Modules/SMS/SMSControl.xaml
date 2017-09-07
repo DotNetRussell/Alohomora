@@ -15,7 +15,7 @@
             <RowDefinition Height="30"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Button Grid.Row="0" Height="30" VerticalAlignment="Top" FontSize="20" Command="{Binding RefreshContactsCommand}">Refresh Contacts</Button>
+        <Button Grid.Row="0" Height="30" VerticalAlignment="Top" FontSize="20" Command="{Binding RefreshContactsCommand}">🗘Refresh Contacts</Button>
         <Border Grid.Row="1" DataContext="{Binding TextBeltVM}" 
                 Grid.Column="0" Padding="5" HorizontalAlignment="Left" 
                 BorderBrush="Black" BorderThickness="1" >
@@ -23,11 +23,15 @@
                 <TextBlock FontSize="30" FontWeight="Bold">TextBelt SMS</TextBlock>
                 <TextBlock FontSize="20">API Key</TextBlock>
                 <TextBox Text="{Binding APIKey,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <TextBlock>
+                    Need a key?
+                    <Hyperlink Click="GetTextBeltKey">https://textbelt.com/</Hyperlink>
+                </TextBlock>
                 <TextBlock FontSize="20">Target Phone Number</TextBlock>
                 <TextBox Text="{Binding PhoneNumber,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
                 <TextBlock FontSize="20">Message</TextBlock>
                 <TextBox Height="50" TextWrapping="Wrap" Text="{Binding Message,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
-                <Button Command="{Binding SendMessageCommand}" Margin="0,10,0,0" FontSize="20">Send Message</Button>
+                <Button Command="{Binding SendMessageCommand}" Margin="0,10,0,0" FontSize="20">✉Send Message  </Button>
             </StackPanel>
         </Border>
         <ListView Grid.RowSpan="2" Grid.Column="1" ItemsSource="{Binding TargetProfiles}">
@@ -50,10 +54,12 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Image Source="{Binding ImageUrl}" Width="100" Grid.Column="0" />
-                        <StackPanel Grid.Column="1" >
+                        <Border Grid.Column="0" BorderBrush="Black" BorderThickness="2" CornerRadius="2">
+                            <Image Source="{Binding ImageUrl}" Width="100" />
+                        </Border>
+                        <StackPanel Grid.Column="1" Width="200" Margin="10,0,0,0">
                             <TextBlock Text="{Binding Name}"/>
-                            <ListView ItemsSource="{Binding PhoneNumbers}">
+                            <ListView ItemsSource="{Binding PhoneNumbers}" BorderBrush="Transparent">
                                 <ListView.ItemContainerStyle>
                                     <Style TargetType="{x:Type ListViewItem}">
                                         <Setter Property="Background" Value="Transparent" />

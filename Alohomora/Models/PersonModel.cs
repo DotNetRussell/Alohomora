@@ -2,6 +2,7 @@
 using Alohomora.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,93 +15,79 @@ namespace Alohomora.Models
     public class PersonModel : ModelBase
     {
         private Guid _personId = Guid.NewGuid();
-
         private string _fullName;
-
         private string _imageUrl;
-
-        private List<string> _jobs;
-
-        private List<string> _schools;
-
-        private List<string> _details;
-
-        private List<string> _addresses;
-
-        private List<string> _imageUrls;
-
-        private List<string> _names;
-
-        private List<string> _phoneNumbers;
-
-        private List<string> _dobs;
-
+        private ObservableCollection<string> _jobs;
+        private ObservableCollection<string> _schools;
+        private ObservableCollection<string> _details;
+        private ObservableCollection<string> _addresses;
+        private ObservableCollection<string> _imageUrls;
+        private ObservableCollection<string> _names;
+        private ObservableCollection<string> _phoneNumbers;
+        private ObservableCollection<string> _dobs;
+        private ObservableCollection<string> _notes;
         public string Name
         {
             get { return _names.FirstOrDefault(); }
         }
-
         public string ImageUrl
         {
             get { return _imageUrls.FirstOrDefault(); }
         }
-
         public string Dob
         {
             get { return _dobs.FirstOrDefault(); }
         }
 
-        public List<string> Names
+        public ObservableCollection<string> Names
         {
             get { return _names; }
             set { _names = value; }
         }
 
-        public List<string> Dobs
+        public ObservableCollection<string> Dobs
         {
             get { return _dobs; }
             set { _dobs = value; }
         }
 
-        public List<string> PhoneNumbers
+        public ObservableCollection<string> PhoneNumbers
         {
             get { return _phoneNumbers; }
             set { _phoneNumbers = value; }
         }
 
-        public List<string> ImageUrls
+        public ObservableCollection<string> ImageUrls
         {
             get { return _imageUrls; }
             set { _imageUrls = value; }
         }
 
-        public List<string> Addresses
+        public ObservableCollection<string> Addresses
         {
             get { return _addresses; }
             set { _addresses = value; }
         }
 
-        public List<string> Details
+        public ObservableCollection<string> Details
         {
             get { return _details; }
             set { _details = value; }
         }
 
-        public List<string> Schools
+        public ObservableCollection<string> Schools
         {
             get { return _schools; }
             set { _schools = value; }
         }
 
-        public List<string> Jobs
+        public ObservableCollection<string> Jobs
         {
             get { return _jobs; }
             set { _jobs = value; }
         }
 
-        private List<string> _notes;
-
-        public List<string> Notes
+        public ObservableCollection<string> Notes
         {
             get { return _notes; }
             set { _notes = value; }
@@ -141,45 +128,20 @@ namespace Alohomora.Models
             {
                 return _phoneNumbers.Count;
             }
-        }
-        
-        [ScriptIgnore]
-        public ICommand DeleteItemCommand { get; set; }
+        }        
 
         public PersonModel()
         {
-            _jobs = new List<string>();
-            _schools = new List<string>();
-            _details = new List<string>();
-            _addresses = new List<string>();
-            _imageUrls = new List<string>();
-            _names = new List<string>();
-            _dobs = new List<string>();
-            _phoneNumbers = new List<string>();
-            _notes = new List<string>();
+            _jobs = new ObservableCollection<string>();
+            _schools = new ObservableCollection<string>();
+            _details = new ObservableCollection<string>();
+            _addresses = new ObservableCollection<string>();
+            _imageUrls = new ObservableCollection<string>();
+            _names = new ObservableCollection<string>();
+            _dobs = new ObservableCollection<string>();
+            _phoneNumbers = new ObservableCollection<string>();
+            _notes = new ObservableCollection<string>();
 
-            DeleteItemCommand = new ButtonCommand(CanDeleteItem, DeleteItemExecuted);
-        }
-
-        public bool CanDeleteItem(Object args)
-        {
-            return true;
-        }
-
-        public void DeleteItemExecuted(Object args)
-        {
-            PersonModel personModel = args as PersonModel;
-
-            if (personModel != null)
-            {
-                MessageBoxResult result = MessageBox.Show("Delete Target Profile?", "Are you sure you'd like to delete this target profile?", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
-
-                if(result == MessageBoxResult.Yes)
-                {
-                    MasterTargetListViewModel.RemoveTarget(personModel);
-                }
-            }
-        }
-
+        }        
     }
 }

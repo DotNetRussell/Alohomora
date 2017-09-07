@@ -330,7 +330,13 @@
                             </ListView.ItemContainerStyle>
                             <ListView.ItemTemplate>
                                 <DataTemplate>
-                                    <Expander Header="{Binding names[0].display}" FontSize="15" >
+                                    <Expander FontSize="15" >
+                                        <Expander.Header>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="{Binding names[0].display}" Width="200"/>
+                                                <CheckBox IsChecked="{Binding Selected,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Content="Include in target profile" />
+                                            </StackPanel>
+                                        </Expander.Header>
                                         <Grid>
                                             <Grid.ColumnDefinitions >
                                                 <ColumnDefinition Width=".33*"/>
@@ -338,7 +344,6 @@
                                                 <ColumnDefinition Width=".33*"/>
                                             </Grid.ColumnDefinitions>
                                             <StackPanel Orientation="Vertical" Grid.Column="0" >
-                                                <CheckBox IsChecked="{Binding Selected,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Content="Export" />
                                                 <TextBlock Margin="5,0,0,0" Text="Names: " FontWeight="Bold" />
                                                 <ListView
                                                     ItemsSource="{Binding names}" HorizontalAlignment="Left" 

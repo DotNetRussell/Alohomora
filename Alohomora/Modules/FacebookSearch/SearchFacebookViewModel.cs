@@ -101,7 +101,10 @@ namespace Alohomora.ViewModels
             FacebookLinkModel facebookLinkModel = SelectedFacebookLinkModel;
 
             personModel.ImageUrls.Add(facebookLinkModel.ProfileImage);
-            personModel.Jobs.AddRange(facebookLinkModel.Jobs);
+            foreach(string job in facebookLinkModel.Jobs)
+            {
+                personModel.Jobs.Add(job);
+            }
             personModel.Names.Add(facebookLinkModel.DisplayName);
             personModel.Names.Add(facebookLinkModel.FirstName + " " + facebookLinkModel.LastName);
             if (facebookLinkModel.PossibleLinks != null && facebookLinkModel.PossibleLinks.Count > 0)

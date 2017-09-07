@@ -23,5 +23,10 @@ namespace Alohomora.Modules.SMS
             InitializeComponent();
             this.DataContext = new SMSViewModel();
         }
+
+        private void GetTextBeltKey(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://textbelt.com/");
+        }
     }
 }
