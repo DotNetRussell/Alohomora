@@ -21,7 +21,7 @@
                     <Border BorderBrush="Black" BorderThickness="1" Margin="10" Background="LightGray">
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width=".2*"/>
+                                <ColumnDefinition Width="150"/>
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>

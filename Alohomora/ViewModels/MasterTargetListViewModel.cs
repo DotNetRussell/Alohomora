@@ -23,7 +23,7 @@ namespace Alohomora.ViewModels
         public MasterTargetListViewModel()
         {
             TargetProfiles = new ObservableCollection<PersonModel>();
-            AlohomoraServices.RegisterService("targetProfileViewModel", this);
+            AlohomoraServices.RegisterService("MasterTargetListViewModel", this);
             DeleteItemCommand = new ButtonCommand(CanDeleteItem, DeleteItemExecuted);
             TargetDetailsCommand = new ButtonCommand(CanDisplayTargetDetails, DisplayTargetDetails);
             GetPersonModels();
@@ -41,7 +41,8 @@ namespace Alohomora.ViewModels
             _window.Owner = Application.Current.MainWindow;
             _window.MinHeight = 500;
             _window.MinWidth = 500;
-            _window.SizeToContent = SizeToContent.WidthAndHeight;
+            _window.Width = 1200;
+            _window.SizeToContent = SizeToContent.Height;
             _window.Show();
         }
 
@@ -67,7 +68,7 @@ namespace Alohomora.ViewModels
 
         public static IEnumerable<PersonModel> GetTargetProfiles()
         {
-            MasterTargetListViewModel masterTargetListViewModel = AlohomoraServices.GetService("targetProfileViewModel") as MasterTargetListViewModel;
+            MasterTargetListViewModel masterTargetListViewModel = AlohomoraServices.GetService("MasterTargetListViewModel") as MasterTargetListViewModel;
             if (masterTargetListViewModel != null)
             {
                 return masterTargetListViewModel.TargetProfiles;
@@ -80,7 +81,7 @@ namespace Alohomora.ViewModels
 
         public static void AddTarget(PersonModel model)
         {
-            MasterTargetListViewModel masterTargetListViewModel = AlohomoraServices.GetService("targetProfileViewModel") as MasterTargetListViewModel;
+            MasterTargetListViewModel masterTargetListViewModel = AlohomoraServices.GetService("MasterTargetListViewModel") as MasterTargetListViewModel;
             if (masterTargetListViewModel != null)
             {
                 bool targetExists = masterTargetListViewModel.TargetProfiles.Where(profile => profile.PersonId == model.PersonId).Count() > 0;
@@ -94,7 +95,7 @@ namespace Alohomora.ViewModels
 
         public static void RemoveTarget(PersonModel model)
         {
-            MasterTargetListViewModel masterTargetListViewModel = AlohomoraServices.GetService("targetProfileViewModel") as MasterTargetListViewModel;
+            MasterTargetListViewModel masterTargetListViewModel = AlohomoraServices.GetService("MasterTargetListViewModel") as MasterTargetListViewModel;
             if (masterTargetListViewModel != null)
             {
                 bool targetExists = masterTargetListViewModel.TargetProfiles.Where(profile => profile.PersonId == model.PersonId).Count() > 0;
@@ -108,7 +109,7 @@ namespace Alohomora.ViewModels
 
         public static void SaveTargetProfiles()
         {
-            MasterTargetListViewModel masterTargetListViewModel = AlohomoraServices.GetService("targetProfileViewModel") as MasterTargetListViewModel;
+            MasterTargetListViewModel masterTargetListViewModel = AlohomoraServices.GetService("MasterTargetListViewModel") as MasterTargetListViewModel;
 
             string json = Serializer.PersonModelsToJson(masterTargetListViewModel.TargetProfiles);
             if (File.Exists("./cachedTargets.alohomora"))

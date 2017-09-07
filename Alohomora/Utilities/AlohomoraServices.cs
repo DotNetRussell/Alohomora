@@ -14,6 +14,11 @@ namespace Alohomora.Utilities
         {
             try
             {
+                if(Services.ContainsKey(serviceName))
+                {
+                    Services.Remove(serviceName);
+                }
+
                 Services.Add(serviceName, serviceInstance);
             }
             catch(Exception error)

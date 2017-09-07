@@ -28,5 +28,14 @@ namespace Alohomora.UserControls
             InitializeComponent();
             this.DataContext = new TargetProfileViewModel(targetProfile);
         }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButton button = sender as RadioButton;
+            if (button != null)
+            {
+                TargetProfileViewModel.SetMapLocation(button.Content as string);
+            }
+        }
     }
 }

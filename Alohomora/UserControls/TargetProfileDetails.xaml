@@ -8,12 +8,52 @@
     <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Visible">
         <Grid VerticalAlignment="Stretch">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width=".3*"/>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Image VerticalAlignment="Top" Source="{Binding TargetProfile.ImageUrl}" Grid.Column="0" Width="300"/>
-            <Border Grid.Column="1" BorderThickness="1" BorderBrush="Black" CornerRadius="2">
-                <ListView  Height="{Binding ElementName=TargetProfileDetailsControl, Path=ActualHeight}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ContentPresenter Grid.Row="1" Grid.Column="1"  Content="{Binding MapControl}" />
+            <Image Grid.Row="1"  Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Source="{Binding TargetProfile.ImageUrl}" Width="300"/>
+
+            <Border Grid.Column="1" Grid.Row="0" BorderBrush="Black" BorderThickness="2">
+            <StackPanel Orientation="Vertical" >
+                <TextBlock FontSize="20" Text="Notes: "/>
+                <StackPanel Orientation="Vertical">
+                    <TextBox Text="{Binding NoteText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="100" Width="400" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" AcceptsTab="True"/>
+                    <Button Command="{Binding AddNoteCommand}" Width="150" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="40">
+                        <TextBlock Margin="0,-5,0,0">+ Add Note</TextBlock>
+                    </Button>
+                </StackPanel>
+                <ListView BorderBrush="Transparent" ItemsSource="{Binding TargetProfile.Notes}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin="10" Width="400" FontSize="15" TextWrapping="Wrap" Text="{Binding }"/>
+                                <Button Command="{Binding ElementName=TargetProfileDetailsControl, Path=DataContext.DeleteNoteCommand}" 
+                                            CommandParameter="{Binding}" Width="30" Height="30" VerticalAlignment="Top">🗑</Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListViewItem}">
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type ListViewItem}">
+                                        <ContentPresenter />
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
+            </StackPanel>
+            </Border>
+            <Border Grid.Row="0" Grid.Column="0"  BorderThickness="1" BorderBrush="Black" CornerRadius="2">
+                <ListView>
                     <ListView.ItemContainerStyle>
                         <Style TargetType="{x:Type ListViewItem}">
                             <Setter Property="Background" Value="Transparent" />
@@ -36,6 +76,28 @@
                             <TextBlock FontSize="20" Text="{Binding TargetProfile.Dob}"/>
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
+                            <TextBlock FontSize="20" Text="Addresses: "/>
+                            <ListView BorderBrush="Transparent" ItemsSource="{Binding TargetProfile.Addresses}">
+                                <ListView.ItemContainerStyle>
+                                    <Style TargetType="{x:Type ListViewItem}">
+                                        <Setter Property="Background" Value="Transparent" />
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type ListViewItem}">
+                                                   <RadioButton Checked="RadioButton_Checked" GroupName="AddressGroup" Content="{Binding}"/>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </ListView.ItemContainerStyle>
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock FontSize="20" Text="{Binding }"/>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
                             <TextBlock FontSize="20" Text="Jobs: "/>
                             <ListView BorderBrush="Transparent" ItemsSource="{Binding TargetProfile.Jobs}">
                                 <ListView.ItemContainerStyle>
@@ -44,7 +106,7 @@
                                         <Setter Property="Template">
                                             <Setter.Value>
                                                 <ControlTemplate TargetType="{x:Type ListViewItem}">
-                                                    <ContentPresenter />
+                                                    <TextBlock Text="{Binding}" />
                                                 </ControlTemplate>
                                             </Setter.Value>
                                         </Setter>
@@ -66,7 +128,7 @@
                                         <Setter Property="Template">
                                             <Setter.Value>
                                                 <ControlTemplate TargetType="{x:Type ListViewItem}">
-                                                    <ContentPresenter />
+                                                    <TextBlock Text="{Binding}" />
                                                 </ControlTemplate>
                                             </Setter.Value>
                                         </Setter>
@@ -88,7 +150,7 @@
                                         <Setter Property="Template">
                                             <Setter.Value>
                                                 <ControlTemplate TargetType="{x:Type ListViewItem}">
-                                                    <ContentPresenter />
+                                                    <TextBlock Text="{Binding}" />
                                                 </ControlTemplate>
                                             </Setter.Value>
                                         </Setter>
@@ -110,7 +172,7 @@
                                         <Setter Property="Template">
                                             <Setter.Value>
                                                 <ControlTemplate TargetType="{x:Type ListViewItem}">
-                                                    <ContentPresenter />
+                                                    <TextBlock Text="{Binding}" />
                                                 </ControlTemplate>
                                             </Setter.Value>
                                         </Setter>
@@ -118,46 +180,18 @@
                                 </ListView.ItemContainerStyle>
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
-                                        <TextBlock FontSize="20" Text="{Binding }"/>
+                                        <TextBlock Text="{Binding }"/>
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
                             </ListView>
                         </StackPanel>
-                        <StackPanel Orientation="Vertical">
-                            <TextBlock FontSize="20" Text="Notes: "/>
-                            <StackPanel Orientation="Vertical">
-                                <TextBox Text="{Binding NoteText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="100" Width="400" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" AcceptsTab="True"/>
-                                <Button Command="{Binding AddNoteCommand}" Width="150" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="40">
-                                    <TextBlock Margin="0,-5,0,0">+ Add Note</TextBlock>
-                                </Button>
-                            </StackPanel>
-                            <ListView BorderBrush="Transparent" ItemsSource="{Binding TargetProfile.Notes}">
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <StackPanel Orientation="Horizontal">
-                                            <TextBlock Margin="10" FontSize="20" Width="400" TextWrapping="Wrap" Text="{Binding }"/>
-                                            <Button Command="{Binding ElementName=TargetProfileDetailsControl, Path=DataContext.DeleteNoteCommand}" 
-                                                    CommandParameter="{Binding}" Width="30" Height="30" VerticalAlignment="Top">🗑</Button>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                                <ListView.ItemContainerStyle>
-                                    <Style TargetType="{x:Type ListViewItem}">
-                                        <Setter Property="Background" Value="Transparent" />
-                                        <Setter Property="Template">
-                                            <Setter.Value>
-                                                <ControlTemplate TargetType="{x:Type ListViewItem}">
-                                                    <ContentPresenter />
-                                                </ControlTemplate>
-                                            </Setter.Value>
-                                        </Setter>
-                                    </Style>
-                                </ListView.ItemContainerStyle>
-                            </ListView>
-                        </StackPanel>
+                        
                     </StackPanel>
+                    
                 </ListView>
+                
             </Border>
+            
         </Grid>
     </ScrollViewer>
 </UserControl>
