@@ -81,6 +81,7 @@ namespace Alohomora.ViewModels
             ScrapeFacebookCommand = new ButtonCommand(CanExecuteFacebookScrapeCommand, FacebookScrapeExecuted);
             SearchPiplAPICommand = new ButtonCommand(CanExecutePiplApiSearch, PiplApiSearchExecuted);
             ModifiedVoterDBSearchCommand = new ButtonCommand(CanExecuteModifiedSearchVoterDBCommand, ExecutedModifiedSearchVoterDBCommand);
+            ModifiedVoterDBSearchSpouseCommand = new ButtonCommand(CanExecuteSpouseModifiedSearchVoterDBCommand, ExecutedSpouseModifiedSearchVoterDBCommand);
             AddToTargetDashboard = new ButtonCommand(CanConvertToPersonModel, ConvertToPersonModelExecuted);
             LoadCustomConfiguration();
         }
@@ -211,8 +212,7 @@ namespace Alohomora.ViewModels
 
             FacebookLinkModel facebookLinkModel = SelectedFacebookLinkModel;
             RunSpouseQuery(facebookLinkModel);
-
-            IsLoading = false;
+            
         }
 
         public bool CanExecuteModifiedSearchVoterDBCommand(object args)
@@ -473,6 +473,7 @@ namespace Alohomora.ViewModels
                 facebookLinkModel.PossibleSpouseLinks =
                     await DatabaseStuff.RunQuery(facebookLinkModel.SpouseFirstName,
                     facebookLinkModel.SpouseLastName, facebookLinkModel.CurrentCity);
+                IsLoading = false;
             }
         }
 
