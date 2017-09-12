@@ -32,7 +32,8 @@
 
 <center>
 Release v1 - Man in the Box | Coming @DerbyCon
-"https://www.youtube.com/embed/TAqZb52sgpU?list=RDQMfLMZeYNKTcE
+
+https://www.youtube.com/embed/TAqZb52sgpU?list=RDQMfLMZeYNKTcE
 </center>
 
 <h1>Tips are Appreciated!</h1>	
