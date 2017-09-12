@@ -13,17 +13,17 @@
 <ul>
 <li>✔ COMPLETED ✔ Regex customization and config section for easy on the fly updates</li>
 <li>✔ COMPLETED ✔ Implement easy module creation for new development 
-<li>✔ COMPLETED ✔Implement new UI layout</li>
-<li>✔ COMPLETED ✔Cache all target data in a centeral location for display and use</li>
-<li>✔ COMPLETED ✔SMS Spoofing Module</li>
-<li>✔ COMPLETED ✔Clean up project files</li>
+<li>✔ COMPLETED ✔ Implement new UI layout</li>
+<li>✔ COMPLETED ✔ Cache all target data in a centeral location for display and use</li>
+<li>✔ COMPLETED ✔ SMS Spoofing Module</li>
+<li>✔ COMPLETED ✔ Clean up project files</li>
+<li>✔ COMPLETED ✔ Add a map view of target's home address</li>
 <li>Add a target profile details page</li>
 <li>Link voter db results to pipl search</li>
 <li>Display target's co-workers scraped from facebook</li>
 <li>Display target's apps scraped from facebook</li>
 <li>Display target's checkins scraped from facebook</li>
 <li>Export targets to CSV</li>
-<li>Add a map view and street view of target's home address</li>
 <li>Incorperate data breach data Module. Possibly from yahoo and/or ashely madison?</li>
 <li>Add wait dialog for spouse search voter database screen</li>
 </ul>
