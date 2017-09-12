@@ -39,10 +39,9 @@ namespace Alohomora.ViewModels
             Window _window = new Window();
             _window.Content = new TargetProfileDetails(args as PersonModel);
             _window.Owner = Application.Current.MainWindow;
-            _window.MinHeight = 500;
+            _window.Height = 600;
             _window.MinWidth = 500;
             _window.Width = 1200;
-            _window.SizeToContent = SizeToContent.Height;
             _window.Show();
         }
 

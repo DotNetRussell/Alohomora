@@ -8,18 +8,19 @@
     <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Visible">
         <Grid VerticalAlignment="Stretch">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="400"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <ContentPresenter Grid.Row="1" Grid.Column="1"  Content="{Binding MapControl}" />
-            <Image Grid.Row="1"  Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Source="{Binding TargetProfile.ImageUrl}" Width="300"/>
+            <Image Grid.Row="0" Height="400" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Source="{Binding TargetProfile.ImageUrl}" />
 
-            <Border Grid.Column="1" Grid.Row="0" BorderBrush="Black" BorderThickness="2">
-            <StackPanel Orientation="Vertical" >
+            <ContentPresenter Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left"  Content="{Binding MapControl}" />
+
+            <Border HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" BorderBrush="Black" BorderThickness="2">
+            <StackPanel ScrollViewer.VerticalScrollBarVisibility="Hidden"  Orientation="Vertical" >
                 <TextBlock FontSize="20" Text="Notes: "/>
                 <StackPanel Orientation="Vertical">
                     <TextBox Text="{Binding NoteText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="100" Width="400" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" AcceptsTab="True"/>
@@ -30,12 +31,14 @@
                 <ListView BorderBrush="Transparent" ItemsSource="{Binding TargetProfile.Notes}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
+                                <Border Background="WhiteSmoke" BorderBrush="Black" BorderThickness="2,2,3,3" Margin="2" Width="400">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Margin="10" Width="400" FontSize="15" TextWrapping="Wrap" Text="{Binding }"/>
-                                <Button Command="{Binding ElementName=TargetProfileDetailsControl, Path=DataContext.DeleteNoteCommand}" 
+                                        <TextBlock Margin="10" Width="341" FontSize="15" TextWrapping="Wrap" Text="{Binding }"/>
+                                <Button Margin="2" Command="{Binding ElementName=TargetProfileDetailsControl, Path=DataContext.DeleteNoteCommand}" 
                                             CommandParameter="{Binding}" Width="30" Height="30" VerticalAlignment="Top">🗑</Button>
                             </StackPanel>
-                        </DataTemplate>
+                                </Border>
+                            </DataTemplate>
                     </ListView.ItemTemplate>
                     <ListView.ItemContainerStyle>
                         <Style TargetType="{x:Type ListViewItem}">
@@ -52,7 +55,7 @@
                 </ListView>
             </StackPanel>
             </Border>
-            <Border Grid.Row="0" Grid.Column="0"  BorderThickness="1" BorderBrush="Black" CornerRadius="2">
+            <Border Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left"  BorderThickness="1" BorderBrush="Black" CornerRadius="2" Width="500">
                 <ListView>
                     <ListView.ItemContainerStyle>
                         <Style TargetType="{x:Type ListViewItem}">
@@ -77,14 +80,14 @@
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
                             <TextBlock FontSize="20" Text="Addresses: "/>
-                            <ListView BorderBrush="Transparent" ItemsSource="{Binding TargetProfile.Addresses}">
+                            <ListView x:Name="AddressListControl" BorderBrush="Transparent" ItemsSource="{Binding TargetProfile.Addresses}">
                                 <ListView.ItemContainerStyle>
                                     <Style TargetType="{x:Type ListViewItem}">
                                         <Setter Property="Background" Value="Transparent" />
                                         <Setter Property="Template">
                                             <Setter.Value>
                                                 <ControlTemplate TargetType="{x:Type ListViewItem}">
-                                                   <RadioButton Checked="RadioButton_Checked" GroupName="AddressGroup" Content="{Binding}"/>
+                                                    <RadioButton Checked="RadioButton_Checked" GroupName="AddressGroup" Content="{Binding}"/>
                                                 </ControlTemplate>
                                             </Setter.Value>
                                         </Setter>
@@ -106,7 +109,7 @@
                                         <Setter Property="Template">
                                             <Setter.Value>
                                                 <ControlTemplate TargetType="{x:Type ListViewItem}">
-                                                    <TextBlock Text="{Binding}" />
+                                                    <TextBlock Text="{Binding}"  HorizontalAlignment="Left" TextWrapping="Wrap" Width="400" />
                                                 </ControlTemplate>
                                             </Setter.Value>
                                         </Setter>
@@ -128,7 +131,7 @@
                                         <Setter Property="Template">
                                             <Setter.Value>
                                                 <ControlTemplate TargetType="{x:Type ListViewItem}">
-                                                    <TextBlock Text="{Binding}" />
+                                                    <TextBlock Text="{Binding}"  HorizontalAlignment="Left" TextWrapping="Wrap" Width="400" />
                                                 </ControlTemplate>
                                             </Setter.Value>
                                         </Setter>
@@ -150,7 +153,7 @@
                                         <Setter Property="Template">
                                             <Setter.Value>
                                                 <ControlTemplate TargetType="{x:Type ListViewItem}">
-                                                    <TextBlock Text="{Binding}" />
+                                                    <TextBlock Text="{Binding}" HorizontalAlignment="Left" TextWrapping="Wrap" Width="400"  />
                                                 </ControlTemplate>
                                             </Setter.Value>
                                         </Setter>
@@ -158,7 +161,7 @@
                                 </ListView.ItemContainerStyle>
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
-                                        <TextBlock FontSize="20" Text="{Binding }"/>
+                                        <TextBlock FontSize="20" Text="{Binding }" />
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
                             </ListView>
@@ -172,7 +175,7 @@
                                         <Setter Property="Template">
                                             <Setter.Value>
                                                 <ControlTemplate TargetType="{x:Type ListViewItem}">
-                                                    <TextBlock Text="{Binding}" />
+                                                    <TextBlock Text="{Binding}" HorizontalAlignment="Left" TextWrapping="Wrap" Width="400" />
                                                 </ControlTemplate>
                                             </Setter.Value>
                                         </Setter>

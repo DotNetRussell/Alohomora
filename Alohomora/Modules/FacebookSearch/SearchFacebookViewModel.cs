@@ -120,10 +120,17 @@ namespace Alohomora.ViewModels
                 {
                     continue;
                 }
+
+                if(pipLink.dob!= null)
+                {
+                    personModel.Dobs.Add(pipLink.dob.date_range.start);
+                }
+
                 foreach (Name name in pipLink.names)
                 {
                     personModel.Names.Add(name.display);
                 }
+                
                 foreach (Address address in pipLink.addresses)
                 {
                     personModel.Addresses.Add(address.display);
@@ -143,6 +150,11 @@ namespace Alohomora.ViewModels
                 foreach (Education education in pipLink.educations)
                 {
                     personModel.Schools.Add(education.school + " - " + education.degree);
+                }
+
+                foreach(string detail in facebookLinkModel.ParsedDetails)
+                {
+                    personModel.Details.Add(detail);
                 }
             }
 

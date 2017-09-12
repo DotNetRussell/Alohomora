@@ -18,7 +18,7 @@
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Border BorderBrush="Black" BorderThickness="1" Margin="10" Background="LightGray">
+                    <Border BorderBrush="Black" BorderThickness="2,2,4,4" Margin="10" Background="LightGray">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="150"/>
@@ -27,7 +27,7 @@
                             </Grid.ColumnDefinitions>
                             <Image Source="{Binding ImageUrl}" Width="150" Grid.Column="0" />
                             <StackPanel Width="200" Grid.Column="1" Margin="5">
-                                <TextBlock Text="{Binding Name}"/>
+                                <TextBlock FontWeight="Bold"  FontSize="15" Text="{Binding Name}"/>
                                 <TextBlock Text="{Binding Dob}"/>
                                 <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                                     <TextBlock FontWeight="Bold" Width="100">Addresses:</TextBlock>
@@ -47,8 +47,8 @@
                                 </StackPanel>
                             </StackPanel>
 
-                            <StackPanel Orientation="Horizontal" Grid.Column="2" >
-                                <Button HorizontalAlignment="Right" Command="{Binding ElementName=DashboardControl, Path=DataContext.TargetDetailsCommand}" CommandParameter="{Binding}" ToolTip="Details" VerticalAlignment="Top" FontSize="15" Width="20" >☰</Button>
+                            <StackPanel Orientation="Horizontal" Grid.Column="3" Margin="4">
+                                <Button HorizontalAlignment="Right" Command="{Binding ElementName=DashboardControl, Path=DataContext.TargetDetailsCommand}" CommandParameter="{Binding}" ToolTip="Details" VerticalAlignment="Top" FontSize="15" Width="40" >☰</Button>
                                 <Button Command="{Binding ElementName=DashboardControl, Path=DataContext.DeleteItemCommand}" CommandParameter="{Binding}" HorizontalAlignment="Right" ToolTip="Delete" VerticalAlignment="Top" FontSize="15" Width="30" >🗑</Button>
                             </StackPanel>
                         </Grid>
