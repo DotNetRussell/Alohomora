@@ -19,13 +19,13 @@
 <li>✔ COMPLETED ✔ Clean up project files</li>
 <li>✔ COMPLETED ✔ Add a map view of target's home address</li>
 <li>✔ COMPLETED ✔ Add a target profile details page</li>
+<li>✔ COMPLETED ✔ Add wait dialog for spouse search voter database screen</li>
 <li>Link voter db results to pipl search</li>
 <li>Display target's co-workers scraped from facebook</li>
 <li>Display target's apps scraped from facebook</li>
 <li>Display target's checkins scraped from facebook</li>
 <li>Export targets to CSV</li>
 <li>Incorperate data breach data Module. Possibly from yahoo and/or ashely madison?</li>
-<li>Add wait dialog for spouse search voter database screen</li>
 </ul>
 <hr/>
 <p style="font-size:39"><b>Here you will find tutorials on how to use this tool.</b></p>
