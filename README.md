@@ -18,7 +18,7 @@
 <li>✔ COMPLETED ✔ SMS Spoofing Module</li>
 <li>✔ COMPLETED ✔ Clean up project files</li>
 <li>✔ COMPLETED ✔ Add a map view of target's home address</li>
-<li>Add a target profile details page</li>
+<li>✔ COMPLETED ✔ Add a target profile details page</li>
 <li>Link voter db results to pipl search</li>
 <li>Display target's co-workers scraped from facebook</li>
 <li>Display target's apps scraped from facebook</li>
