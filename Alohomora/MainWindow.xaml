@@ -4,8 +4,8 @@
         xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Alohomora"
-        WindowState="Maximized" Icon="/images/fbd.png" Title="Alohomora"
+        xmlns:local="clr-namespace:Alohomora" Width="1200"
+        WindowState="Normal" Icon="/images/fbd.png" Title="Alohomora"
         mc:Ignorable="d">
     <Grid>
         <Grid.ColumnDefinitions>

@@ -7,7 +7,8 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid Background="LightGoldenrodYellow">
 
-        <StackPanel>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel>
             <StackPanel.Resources>
                 <Style TargetType="TextBlock">
                     <Setter Property="FontSize" Value="20"/>
@@ -17,7 +18,6 @@
                     <Setter Property="FontSize" Value="20"/>
                 </Style>
             </StackPanel.Resources>
-
             <Border BorderBrush="Black" BorderThickness="1" Padding="5" Margin="10" >
                 <StackPanel>
                     <TextBlock FontWeight="Bold" Padding="5">Facebook Regex Configuration</TextBlock>
@@ -55,7 +55,7 @@
                     </StackPanel>
                 </StackPanel>
             </Border>
-
-        </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </UserControl>

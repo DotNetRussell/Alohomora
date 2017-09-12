@@ -5,9 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid Margin="100" HorizontalAlignment="Left">
-
-        <StackPanel Orientation="Vertical">
+    <Grid>
+        <ScrollViewer>
+            <StackPanel Orientation="Vertical" Margin="20">
             
             <TextBlock Text="Configuration" FontSize="30" FontWeight="Bold"/>
             <StackPanel Orientation="Horizontal" Margin="10">
@@ -32,5 +32,6 @@
             <TextBlock HorizontalAlignment="Left" Margin="50,0,0,30" Width="500" TextWrapping="Wrap" FontSize="15">The name of the table hosting your voter information.</TextBlock>
             <Button Command="{Binding SaveConfigurationCommand}" Margin="0,10,0,0" HorizontalAlignment="Right" Width="200" FontSize="20">Save</Button>
         </StackPanel>
+        </ScrollViewer>
     </Grid>
 </UserControl>

@@ -42,6 +42,7 @@ namespace Alohomora.ViewModels
             _window.Height = 600;
             _window.MinWidth = 500;
             _window.Width = 1200;
+            _window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             _window.Show();
         }
 
