@@ -13,9 +13,9 @@
             VerticalAlignment="Top" HorizontalAlignment="Left">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <WrapPanel Grid.IsSharedSizeScope="True"
-                       Orientation="Horizontal" 
-                       HorizontalAlignment="Center"/>
+                          <WrapPanel Grid.IsSharedSizeScope="True"
+                            Orientation="Horizontal" 
+                            HorizontalAlignment="Center"/>
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
                 <ItemsControl.ItemTemplate>
