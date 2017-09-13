@@ -107,3 +107,10 @@ D:\Alohomora Git\Alohomora\Alohomora\bin\Debug\Modules\FacebookLogin\Images\modu
 D:\Alohomora Git\Alohomora\Alohomora\bin\Debug\Modules\Configuration\Images\module_icon.png
 D:\Alohomora Git\Alohomora\Alohomora\bin\Debug\Modules\RegexTweeker\Images\module_icon.png
 D:\Alohomora Git\Alohomora\Alohomora\bin\Debug\Images\home_icon.png
+D:\Alohomora Git\Alohomora\Alohomora\bin\Debug\Modules\SMS\Images\module_icon.png
+D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\Modules\SMS\SMSControl.g.cs
+D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\UserControls\TargetProfileDashboard.g.cs
+D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\UserControls\TargetProfileDetails.g.cs
+D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\Modules\SMS\SMSControl.baml
+D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\UserControls\TargetProfileDashboard.baml
+D:\Alohomora Git\Alohomora\Alohomora\obj\Debug\UserControls\TargetProfileDetails.baml
