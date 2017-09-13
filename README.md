@@ -19,73 +19,22 @@
 <li>✔ COMPLETED ✔ Clean up project files</li>
 <li>✔ COMPLETED ✔ Add a map view of target's home address</li>
 <li>✔ COMPLETED ✔ Add a target profile details page</li>
+<li>✔ COMPLETED ✔ Add wait dialog for spouse search voter database screen</li>
 <li>Link voter db results to pipl search</li>
 <li>Display target's co-workers scraped from facebook</li>
 <li>Display target's apps scraped from facebook</li>
 <li>Display target's checkins scraped from facebook</li>
 <li>Export targets to CSV</li>
 <li>Incorperate data breach data Module. Possibly from yahoo and/or ashely madison?</li>
-<li>Add wait dialog for spouse search voter database screen</li>
 </ul>
 <hr/>
-<p style="font-size:39"><b>Here you will find tutorials on how to use this tool.</b></p>
 </center>
 
-<p style="font-size:30;">
+<center>
+Release v1 - Man in the Box | Coming @DerbyCon
 
-To start you will first need to do the following:
-
-<ul style="font-size:25">
-<li><a href="https://www.facebook.com/login/">Sign into Facebook</a> either <b>via this tool</b> or <b>Internet Explorer</b></li>
-<li>Download your favorite state voter file. The file should be in SWVF format. The Ohio files can be found <a href="https://www6.sos.state.oh.us/ords/f?p=111:1">here</a></li>
-<li>Configure the database connection information in settings</li>
-
-</ul>
-<hr/>
-<h2>
-<b>Running Database Searches:</b>
-</br>
-</h2></br>
-https://www.youtube.com/embed/1w1X--xp7eU
-<p style="font-size:25">
-Prior to running queries against the voter databse you will need to add your database connection string in config. Once configuration is complete, you'll be able to start running database searches. <br/><br/> The workflow for this module is... <br/>  </p>
-</p>
-<ol style="font-size:25">
-<li>First click on the American flag in the left nav panel</li>
-<li>Next, enter search criteria. This can be anything you'd like. You may also use wild cards %</li>
-<li>Once you have results, you may click as many results as you'd like and attempt to resolve the facebook page for each (##NOTE: This will take some time if there's a lot) </li>
-<li>In the final column, the results will be displaed in expanders. The most confident result will be displayed first. Less confident results will be under the expander</li>
-</ol>
-<span style="font-size:30">
-<b>Comming soon:</b> Send to Pipl
-</span>
-
-
-
-</br></br>
-<hr/>
-<h2>
-<b>Running Facebook Searches:</b>
-</h2>
-</br></br>
-https://www.youtube.com/embed/T5A5yORO2N0
-<p style="font-size:25">
-Prior to using this module you'll need to log into your facebook account either via this tool, Internet Explorer, or the Edge browser. The reason for this is that the tool uses Internet Explorer cached values behind the curtains. 
-</p>
-<ol style="font-size:25">
-<li>First click on the Facebook Finger Up button in the left nav panel</li>
-<li>Once this page loads you will be dropped into the Facebook "Find Friends" page. Use this page as you normally would and search however you'd like</li>
-<li>When you have the users that you'd like to operate on, click the import into Alohomora button.</li>
-<li>From here you will be able to scrub each contact. <span style="color:red">YOU MUST START WITH THE FACEBOOK BUTTON </span></li>
-<li>Once the facebook profile scrub is completed you can access the Voter DB scrub and the PiplAPI Scrub</li>
-</ol>
-
-</p>
-
-</br>
-</br>
-<hr/>			
-<div class="entry-content">
+https://www.youtube.com/embed/TAqZb52sgpU?list=RDQMfLMZeYNKTcE
+</center>
 
 <h1>Tips are Appreciated!</h1>	
 <p>If you like my work and would like to donate please feel free!</p>
