@@ -1,7 +1,5 @@
 # Alohomora
 
-[![Build Status](https://travis-ci.org/DotNetRussell/Alohomora.svg?branch=master)](https://travis-ci.org/DotNetRussell/Alohomora)
-
 <html>
 <meta http-equiv="X-UA-Compatible" content="IE=9" /> 
 
