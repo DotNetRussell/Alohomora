@@ -30,7 +30,7 @@ namespace Alohomora.ViewModels
         {
             get
             {
-                return "https://maps.googleapis.com/maps/api/staticmap?maptype=roadmap&markers=color:blue%7Clabel:S%7C" + LatLong + "&center=" + TargetAddress.Replace(" ", "+") + "&zoom=18&size=800x300&key=" + MapStaticAPIKey;
+                return "https://maps.googleapis.com/maps/api/staticmap?maptype=hybrid&markers=color:blue%7Clabel:S%7C" + LatLong + "&center=" + TargetAddress.Replace(" ", "+") + "&zoom=18&size=450x450&key=" + MapStaticAPIKey;
             }
         }
 
@@ -58,11 +58,14 @@ namespace Alohomora.ViewModels
 
             webClient.DownloadStringCompleted += (sender, args) =>
             {
-                dynamic locationInfo = JsonConvert.DeserializeObject(args.Result);
-                LatLong = locationInfo.results[0].geometry.location.lat + "," + locationInfo.results[0].geometry.location.lng;
-                TargetAddress = address;
-                MapControl.Source = new Uri(MapUrl);
-                OnPropertyChanged("MapControl");
+                if (args.Error == null)
+                {
+                    dynamic locationInfo = JsonConvert.DeserializeObject(args.Result);
+                    LatLong = locationInfo.results[0].geometry.location.lat + "," + locationInfo.results[0].geometry.location.lng;
+                    TargetAddress = address;
+                    MapControl.Source = new Uri(MapUrl);
+                    OnPropertyChanged("MapControl");
+                }
             };
             webClient.DownloadStringAsync(new Uri("https://maps.googleapis.com/maps/api/geocode/json?address=" + address.Replace(" ", "+") + "&key=" + MapAPIKey));
 

@@ -53,7 +53,7 @@ namespace Alohomora.ViewModels
                     Window _window = new Window();
                     _window.Content = new BrowserControl();
                     _window.Owner = _cachedWindow;
-                    _window.Height = 500;
+                    _window.Height = 800;
                     _window.Width = 1200;
                     _window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                     _window.Show();
@@ -82,7 +82,7 @@ namespace Alohomora.ViewModels
                                                                         Window _window = new Window();
                                                                         _window.Content = _content;
                                                                         _window.Owner = _cachedWindow;
-                                                                        _window.Height = 500;
+                                                                        _window.Height = 800;
                                                                         _window.Width = 1200;
                                                                         _window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                                                                   

@@ -5,22 +5,28 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Alohomora.UserControls" 
              mc:Ignorable="d" x:Name="TargetProfileDetailsControl">
-    <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Visible">
+    <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="30">
         <Grid VerticalAlignment="Stretch">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="400"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="500"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="400"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Image Grid.Row="0" Height="400" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Source="{Binding TargetProfile.ImageUrl}" />
+            <Image Width="400" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Source="{Binding TargetProfile.ImageUrl}" />
 
-            <ContentPresenter Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left"  Content="{Binding MapControl}" />
+            <ContentPresenter  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="400" Height="400">
+                <ContentPresenter.Content>
+                    <Border BorderBrush="Black" BorderThickness="2"  HorizontalAlignment="Left">
+                        <ContentControl Content="{Binding MapControl}" />
+                    </Border>
+                </ContentPresenter.Content>
+            </ContentPresenter>
 
             <Border HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" BorderBrush="Black" BorderThickness="2">
-            <StackPanel ScrollViewer.VerticalScrollBarVisibility="Hidden"  Orientation="Vertical" >
+              <StackPanel ScrollViewer.VerticalScrollBarVisibility="Hidden"  Orientation="Vertical" >
                 <TextBlock FontSize="20" Text="Notes: "/>
                 <StackPanel Orientation="Vertical">
                     <TextBox Text="{Binding NoteText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="100" Width="400" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" AcceptsTab="True"/>
@@ -55,7 +61,7 @@
                 </ListView>
             </StackPanel>
             </Border>
-            <Border Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left"  BorderThickness="1" BorderBrush="Black" CornerRadius="2" Width="500">
+            <Border Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left"  BorderThickness="1" BorderBrush="Black" CornerRadius="2" Width="500">
                 <ListView>
                     <ListView.ItemContainerStyle>
                         <Style TargetType="{x:Type ListViewItem}">
