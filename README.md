@@ -9,31 +9,11 @@
 <center>
 </br>
 </br>
-<h2> Road Map for DerbyCon release</h2>
-<ul>
-<li>✔ COMPLETED ✔ Regex customization and config section for easy on the fly updates</li>
-<li>✔ COMPLETED ✔ Implement easy module creation for new development 
-<li>✔ COMPLETED ✔ Implement new UI layout</li>
-<li>✔ COMPLETED ✔ Cache all target data in a centeral location for display and use</li>
-<li>✔ COMPLETED ✔ SMS Spoofing Module</li>
-<li>✔ COMPLETED ✔ Clean up project files</li>
-<li>✔ COMPLETED ✔ Add a map view of target's home address</li>
-<li>✔ COMPLETED ✔ Add a target profile details page</li>
-<li>✔ COMPLETED ✔ Add wait dialog for spouse search voter database screen</li>
-<li>Link voter db results to pipl search</li>
-<li>Display target's co-workers scraped from facebook</li>
-<li>Display target's apps scraped from facebook</li>
-<li>Display target's checkins scraped from facebook</li>
-<li>Export targets to CSV</li>
-<li>Incorperate data breach data Module. Possibly from yahoo and/or ashely madison?</li>
-</ul>
-<hr/>
-</center>
+
 
 <center>
 Release v1 - Man in the Box | Coming @DerbyCon
-
-https://www.youtube.com/embed/TAqZb52sgpU?list=RDQMfLMZeYNKTcE
+https://www.DotNetRussell.com/alohamora.html
 </center>
 
 <h1>Tips are Appreciated!</h1>	
