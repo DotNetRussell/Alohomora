@@ -18,44 +18,6 @@ Documentation:
 https://www.DotNetRussell.com/alohamora.html
 </center>
 
-<h1>Tips are Appreciated!</h1>	
-<p>If you like my work and would like to donate please feel free!</p>
-<p>Also, if you do donate please let me know what project you liked best and would like to seem me continue on.</p>
-<table>
-<tr>
-<td>
-<p><strong> </strong></p>
-<p><strong><img class="alignleft" src="https://i.imgur.com/Bv3gNuo.png" width="100" height="100" /></strong></p>
-<p>&nbsp;</p>
-</td>
-<td>
-<p><strong>Verge (preferred coin)</strong></p>
-<p>D6nEdFzHgLXgHu4dGyupzfDKMD2NUf8jaF</p>
-<p>&nbsp;</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><img class="alignleft" src="https://satoshinet.com/images/bitcoin_3.png" width="100" height="100" /></p>
-<p>&nbsp;</p>
-</td>
-<td>
-<p><strong>BitCoin</strong></p>
-<p>1GHAGDbvPhTCm7H6by2nZ5kG7posfUDZv3</p>
-<p>&nbsp;</p>
-</td>
-<td>
-<p><img class="alignleft" src="https://media.coindesk.com/uploads/2014/02/Litecoin-logo.png" width="100" height="100" /></p>
-<p>&nbsp;</p>
-</td>
-<td>
-<p><strong>LiteCoin</strong></p>
-<p>LWHEWKaYqgZvfPQWcscCCSBGRKRWnaz728</p>
-<p>&nbsp;</p>
-</td>
-</tr>
-</table>		
-
 
 </div><!-- .entry-content -->
 
